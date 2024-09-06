@@ -43,12 +43,13 @@ void _append(node *head, int x)
 * @x: input data
 * Return: the new head of the linked list
 */
-node *_insert(node *head, int x)
+void _insert(node **head, int x)
 {
+    //node *tmp;
     node *nd = (node *)malloc(sizeof(node));
     nd->data = x;
-    nd->next = head;
-    return nd;
+    nd->next = *head;
+    *head = nd;
 }
 
 /**
@@ -86,11 +87,12 @@ void _freelist(node *head)
 }
 
 //test
-int main() {
+int main(void)
+{
     // Write C code here
     node *head = NULL;
-    head = _insert(head, 25);
-    head = _insert(head, 80);
+    _insert(&head, 25);
+    _insert(&head, 80);
     _append(head, 60);
     _append(head, 80);
     _append(head, 58);
