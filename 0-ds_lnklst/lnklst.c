@@ -101,6 +101,13 @@ void _printlist(node *head)
      
 }
 
+
+/**
+* _reversels-reverses linked list
+* @head: this is linked list
+* 
+* Return: returns the reversed node
+*/
 node *_reversels(node *head)
 {
     node *prev = NULL;
@@ -138,6 +145,12 @@ void _freelist(node *head)
     }
 }
 
+/** 
+* _deleten: frees the list from allocated memory
+* @hptr: pointer to head
+* @n: nth position to delete from
+* Return: 1 on success, 0 on failure
+*/
 int _deleten(node **hptr, int n)
 {
     int i = 0;
@@ -168,6 +181,11 @@ int _deleten(node **hptr, int n)
 
 }
 
+/** 
+* _rprint: frees the list from allocated memory
+* @h- head of linked list
+* Return: Nothing
+*/
 void _rprint(node *h)
 {
     if (h == NULL)
