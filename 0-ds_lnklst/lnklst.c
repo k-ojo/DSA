@@ -3,20 +3,8 @@
 * Date: 9/6/2024
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "lnklst.h"
 
-/**
-* Node- defined data structure that stores the node of a linked list
-* @data: the data at each node
-* @next: pointer to next node
-*/
-typedef struct Node
-{
-    int data;
-    struct Node *next;
-
-}node;
 
 /**
 * _append- inserts data at the end of list
@@ -102,12 +90,14 @@ int _insertn(node **head, int x, int n)
 */
 void _printlist(node *head)
 {
-    while (head->next != NULL)
+    
+    while (head != NULL)
     {
+
         printf("%i->", head->data);
         head = head->next;
     }
-    printf("%i->NULL\n", head->data);
+    printf("NULL\n");
      
 }
 
@@ -124,6 +114,7 @@ node *_reversels(node *head)
         prev = cur;
         cur = nxt;
     }
+    
     return prev;
 }
 /** 
@@ -138,13 +129,13 @@ void _freelist(node *head)
     {
         return;
     }
-    while (head->next != NULL)
+    while (head != NULL)
     {
+        printf("I am watching!\n");
         tmp = head;
         head = head->next;
         free(tmp);
     }
-    free(head);
 }
 
 int _deleten(node **hptr, int n)
@@ -186,26 +177,4 @@ void _rprint(node *h)
     _rprint(h->next);
     printf("%i\n", h->data);
 
-}
-
-//test
-int main(void)
-{
-    // Write C code here
-    node *head = NULL;
-    node *h2 = NULL;
-    _insert(&head, 25);
-    _insert(&head, 80);
-    _append(head, 60);
-    _append(head, 83);
-    _append(head, 58);
-    _insertn(&head, 85, 5);
-    //_deleten(&head, 1);
-    printf("break\n");
-    _rprint(head);
-    _printlist(head);
-    _freelist(head);
-    
-    //_freelist(h2);
-    return 0;
 }
