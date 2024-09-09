@@ -177,6 +177,17 @@ int _deleten(node **hptr, int n)
 
 }
 
+void _rprint(node *h)
+{
+    if (h == NULL)
+    {
+        return;
+    }
+    _rprint(h->next);
+    printf("%i\n", h->data);
+
+}
+
 //test
 int main(void)
 {
@@ -189,11 +200,12 @@ int main(void)
     _append(head, 83);
     _append(head, 58);
     _insertn(&head, 85, 5);
-    _deleten(&head, -1);
-    h2 = _reversels(head);
+    //_deleten(&head, 1);
+    printf("break\n");
+    _rprint(head);
     _printlist(head);
-    _printlist(h2);
     _freelist(head);
-    _freelist(h2);
+    
+    //_freelist(h2);
     return 0;
 }
