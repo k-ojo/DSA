@@ -21,3 +21,4 @@ void _freelist(node *head);
 int _deleten(node **hptr, int n);
 void _rprint(node *h);
 int _insertn(node **head, int x, int n);
+node *_reversed(node *p);

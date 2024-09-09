@@ -13,16 +13,15 @@ int main(void)
     _append(head, 83);
     _append(head, 58);
     _insertn(&head, 85, 5);
-
+    _printlist(head);
     //_deleten(&head, 1);
 
-    head = _reversels(_reversels(head));
+    head = _reversed(head);
+    printf("Break :%p\n", head);
     //_rprint(head);
+    //
     _printlist(head);
-    //_printlist(h2);
-
 
     _freelist(head);
-    printf("Dave\n");
     return 0;
 }

@@ -138,7 +138,6 @@ void _freelist(node *head)
     }
     while (head != NULL)
     {
-        printf("I am watching!\n");
         tmp = head;
         head = head->next;
         free(tmp);
@@ -194,5 +193,25 @@ void _rprint(node *h)
     }
     _rprint(h->next);
     printf("%i\n", h->data);
+
+}
+
+node *_reversed(node *p)
+{
+    node *q;
+
+    //printf("%i\n", p->data);
+    if (p->next == NULL)
+    {
+        return (p);
+        //
+    }
+
+    node *head = _reversed(p->next);
+    q = p->next;
+    printf("q: %i p: %i\n", q->data, p->data);
+    q->next = p;
+    p->next = NULL;
+    return (head);
 
 }
