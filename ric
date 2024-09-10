@@ -1,4 +1,4 @@
 #!/bin/bash
 
 docker container prune
-docker run -it -v /home/k-ojo/DSA:/usr/src/app -w /usr/src/app c_cpp-base:latest /bin/bash
+docker run -it -v DSA:/usr/src/app -w /usr/src/app c_cpp-base:latest /bin/bash
