@@ -7,7 +7,7 @@ This project walks through the implementation of all the basic concepts in DSA f
 1. Clone the repository:
 
 ```bash
-git clone url
+git clone https://github.com/k-ojo/DSA.git
 ```
 2. Change directory to the subject you are interested in. for example in you are interested in linked list use this command.
 
