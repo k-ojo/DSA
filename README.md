@@ -9,7 +9,7 @@ This project walks through the implementation of all the basic concepts in DSA f
 ```bash
 git clone https://github.com/k-ojo/DSA.git
 ```
-2. Change directory to the subject you are interested in. for example in you are interested in linked list use this command.
+2. Change directory to the subject you are interested in. For example in you are interested in linked list use this command.
 
 ```bash
 cd 0-ds_lnklst
