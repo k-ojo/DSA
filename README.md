@@ -2,6 +2,11 @@
 
 This project walks through the implementation of all the basic concepts in DSA from Linked lists through to graphs.
 
+## Sections and Directories
+
+1. Linked list - 0-ds_lnklst
+2. doubly linked list - 1-ds_dblnklst
+
 ## Installation 
 
 1. Clone the repository:
