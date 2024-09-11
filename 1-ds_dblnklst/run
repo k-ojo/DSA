@@ -1,5 +1,14 @@
 #!/bin/bash
 
+cd build/
 cmake ..
 cmake --build .
-.\app
+#if [$? -eq 0]; then
+#    clear
+#    /usr/src/app/1-ds_dblnklst/build/app
+
+#    echo -e "\nDone!"
+#fi
+
+/usr/src/app/1-ds_dblnklst/build/app
+echo -e "\nDone!"

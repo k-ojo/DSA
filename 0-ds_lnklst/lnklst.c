@@ -76,7 +76,7 @@ int _linsertn(node **head, int x, int n)
     }
     if (n > i)
     {
-        printf("Error: %d is not a valid index\n", n);
+        printfd("Error: %d is not a valid index\n", n);
     }
     free(tmp);
     return (0);
