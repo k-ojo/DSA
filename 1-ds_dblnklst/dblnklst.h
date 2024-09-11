@@ -6,16 +6,16 @@
 * @next: pointer to next node
 * @prev: pointer to previous node
 */
-typedef struct Node
+typedef struct dNode
 {
     int data;  //data can be any other type
 
     node *next;
     node *prev;
-}node;
+}dnode;
 
 //dblnklst
 void _dappend(node *head, int x);
 void _dinsert(node **head, int x);
 void _dprintls(node *head);
-void _reversed(node )
+void _reversed(node *head);
