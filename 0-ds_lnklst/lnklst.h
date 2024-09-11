@@ -13,12 +13,12 @@ typedef struct Node
 
 }node;
 
-void _append(node *head, int x);
-void _insert(node **head, int x);
-void _printlist(node *head);
-node *_reversels(node *head);
-void _freelist(node *head);
-int _deleten(node **hptr, int n);
-void _rprint(node *h);
-int _insertn(node **head, int x, int n);
-node *_reversed(node *p);
+void _lappend(node *head, int x);
+void _linsert(node **head, int x);
+void _lprintlist(node *head);
+node *_lreversels(node *head);
+void _lfreelist(node *head);
+int _ldeleten(node **hptr, int n);
+void _lrprint(node *h);
+int _linsertn(node **head, int x, int n);
+node *_lreversed(node *p);

@@ -14,8 +14,9 @@ typedef struct dNode
     node *prev;
 }dnode;
 
-//dblnklst
-void _dappend(node *head, int x);
+//in dblnklst.c
+void _dinsert()
+void _dappend(node **head, int x);
 void _dinsert(node **head, int x);
 void _dprintls(node *head);
 void _reversed(node *head);

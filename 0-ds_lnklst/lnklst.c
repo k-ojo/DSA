@@ -12,7 +12,7 @@
 * @x: input data
 * Return: nothing;
 */
-void _append(node *head, int x)
+void _lappend(node *head, int x)
 {
     node *nd = (node *)malloc(sizeof(node));
     nd->data = x;
@@ -31,7 +31,7 @@ void _append(node *head, int x)
 * @x: input data
 * Return: the new head of the linked list
 */
-void _insert(node **head, int x)
+void _linsert(node **head, int x)
 {
     //node *tmp;
     node *nd = (node *)malloc(sizeof(node));
@@ -48,11 +48,11 @@ void _insert(node **head, int x)
 * @n: index to insert
 * Return: the new head of the linked list
 */
-int _insertn(node **head, int x, int n)
+int _linsertn(node **head, int x, int n)
 {
     if (n == 0)
     {
-        _insert(head, x);
+        _linsert(head, x);
         return (1);
     }
 
@@ -88,7 +88,7 @@ int _insertn(node **head, int x, int n)
 *
 * Return: nothing
 */
-void _printlist(node *head)
+void _lprintlist(node *head)
 {
     
     while (head != NULL)
@@ -108,7 +108,7 @@ void _printlist(node *head)
 * 
 * Return: returns the reversed node
 */
-node *_reversels(node *head)
+node *_lreversels(node *head)
 {
     node *prev = NULL;
     node *cur = head;
@@ -129,7 +129,7 @@ node *_reversels(node *head)
 * @head- head of linked list
 * Return: Nothing
 */
-void _freelist(node *head)
+void _lfreelist(node *head)
 {
     node *tmp;
     if (!head)
@@ -150,7 +150,7 @@ void _freelist(node *head)
 * @n: nth position to delete from
 * Return: 1 on success, 0 on failure
 */
-int _deleten(node **hptr, int n)
+int _ldeleten(node **hptr, int n)
 {
     int i = 0;
     node *tmp;
@@ -185,18 +185,18 @@ int _deleten(node **hptr, int n)
 * @h- head of linked list
 * Return: Nothing
 */
-void _rprint(node *h)
+void _lrprint(node *h)
 {
     if (h == NULL)
     {
         return;
     }
-    _rprint(h->next);
+    _lrprint(h->next);
     printf("%i\n", h->data);
 
 }
 
-node *_reversed(node *p)
+node *_lreversed(node *p)
 {
     node *q;
 
@@ -207,7 +207,7 @@ node *_reversed(node *p)
         //
     }
 
-    node *head = _reversed(p->next);
+    node *head = _lreversed(p->next);
     q = p->next;
     printf("q: %i p: %i\n", q->data, p->data);
     q->next = p;

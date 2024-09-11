@@ -7,21 +7,21 @@ int main(void)
     node *h2 = NULL;
 
     //populate list
-    _insert(&head, 25);
-    _insert(&head, 80);
-    _append(head, 60);
-    _append(head, 83);
-    _append(head, 58);
-    _insertn(&head, 85, 5);
-    _printlist(head);
-    //_deleten(&head, 1);
+    _linsert(&head, 25);
+    _linsert(&head, 80);
+    _lappend(head, 60);
+    _lappend(head, 83);
+    _lappend(head, 58);
+    _linsertn(&head, 85, 5);
+    _lprintlist(head);
+    //_ldeleten(&head, 1);
 
-    head = _reversed(head);
+    head = _lreversed(head);
     printf("Break :%p\n", head);
-    //_rprint(head);
+    //_lrprint(head);
     //
-    _printlist(head);
+    _lprintlist(head);
 
-    _freelist(head);
+    _lfreelist(head);
     return 0;
 }
