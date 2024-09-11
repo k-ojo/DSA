@@ -4,8 +4,10 @@ This project walks through the implementation of all the basic concepts in DSA f
 
 ## Sections and Directories
 
-1. Linked list - 0-ds_lnklst
-2. doubly linked list - 1-ds_dblnklst
+| Section            | Directory     |
+| ------------------ | ------------- |
+| Linked list        | 0=ds_lnklst   |
+| Doubly linked list | 1-ds_dblnklst |
 
 ## Installation 
 
