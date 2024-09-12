@@ -8,8 +8,10 @@ int main(void)
     _dinsert(&head, 56);
     _dinsert(&head, 9);
     _dinsert(&head, 78);
+ 
 
-
+    _dprintls(head);
+    head = _dreversed(head);
     _dprintls(head);
     _dfreels(head);
 

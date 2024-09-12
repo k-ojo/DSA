@@ -44,3 +44,21 @@ void _dfreels(dnode *head)
         free(tmp);
     }
 }
+
+dnode *_dreversed(dnode *head)
+{
+    dnode *nxt;
+    if (!head)
+        return NULL;
+    while (head->next != NULL)
+    {
+        nxt = head->next;
+        head->next = head->prev;
+        head->prev = nxt;
+        head = head->prev;
+    }
+
+    head->next = head->prev;
+    head->prev = NULL;
+    return head;
+}
