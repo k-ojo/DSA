@@ -19,3 +19,4 @@ void _dinsert();
 void _dinsert(dnode **head, int x);
 void _dprintls(dnode *head);
 void _dreversed(dnode *head);
+void _dfreels(dnode *head);

@@ -11,6 +11,7 @@ int main(void)
 
 
     _dprintls(head);
+    _dfreels(head);
 
     return (0);
 }

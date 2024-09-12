@@ -32,3 +32,15 @@ void _dprintls(dnode *head)
     printf("%i-->NULL\n", head->data);
     
 }
+
+void _dfreels(dnode *head)
+{
+    dnode *tmp;
+
+    while(head != NULL)
+    {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+}
