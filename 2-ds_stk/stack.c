@@ -3,21 +3,18 @@
 /**
 * pop- pops the the top of stack
 * @top: top of stack
-* Return: Poped data
+* Return: nothing
 */
-int pop(msnode **top)
+void pop(msnode **top)
 {
-    int data;
     msnode *tmp = *top;
 
     if (!top || *top == NULL)
     {
-        return(-1);
+        return;
     }
     *top = tmp->next;
-    data = tmp->data;
     free(tmp);
-    return (data);
 }
 
 /**

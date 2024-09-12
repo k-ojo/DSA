@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../0-ds_lnklst/lnklst.h"
 
 
 typedef enum {
@@ -9,9 +10,8 @@ typedef enum {
 /**
 MyStackNode- node of stack
 @ data: data, could be anything
-@ top: top of stack
+@ next: next node
 */
-
 typedef struct MyStackNode
 {
     int data;
@@ -19,13 +19,15 @@ typedef struct MyStackNode
 
 }msnode;
 
-int pop(msnode **top);
+
+
+/**
+MyStackNode- node of stack
+@ data: data, could be anything
+@ top: top of stack
+*/
+void pop(msnode **top);
 void push(msnode **top, int x);
 int peek(msnode *top);
 bool isEmpty(msnode *top);
-
-
-
-
-
 
