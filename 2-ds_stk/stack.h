@@ -7,6 +7,8 @@ typedef enum {
     False = 0,
     True = 1
 }bool;
+
+
 /**
 MyStackNode- node of stack
 @ data: data, could be anything
@@ -14,20 +16,19 @@ MyStackNode- node of stack
 */
 typedef struct MyStackNode
 {
-    int data;
+    void* data;
     struct MyStackNode *next;
 
 }msnode;
 
+typedef enum DataType
+{
+    INT, NODE
+}type;
 
-
-/**
-MyStackNode- node of stack
-@ data: data, could be anything
-@ top: top of stack
-*/
 void pop(msnode **top);
-void push(msnode **top, int x);
-int peek(msnode *top);
+void push(msnode **top, void *x, type);
+void *peek(msnode *top);
 bool isEmpty(msnode *top);
 
+//APPLICATION

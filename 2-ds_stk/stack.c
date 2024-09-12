@@ -23,19 +23,29 @@ void pop(msnode **top)
 * @x: data
 * Return: nothing
 */
-void push(msnode **top, int x)
+void push(msnode **top, void *x, type T)
 {
     msnode *tmp = (msnode *)malloc(sizeof(msnode));
-    tmp->data = x;
+    switch(T)
+    {
+        case INT:
+        tmp->data = (int *)x;
+        break;
+
+        case NODE:
+        tmp->data = (node *)x;
+        break;
+    }
+    
     tmp->next = *top;
     *top = tmp;
 }
 
-int peek(msnode *top)
+void *peek(msnode *top)
 {
     if (!top)
     {
-        return (-1);
+        return (NULL);
     }
     return (top->data);
 }
@@ -48,3 +58,10 @@ bool isEmpty(msnode *top)
     }
     return (False);
 }
+
+//APPLICATION
+
+/**
+* _stackNode- stack definition
+*
+ */
