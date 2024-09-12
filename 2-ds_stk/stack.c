@@ -12,7 +12,7 @@ int pop(msnode **top)
 
     if (!top || *top == NULL)
     {
-        return(0);
+        return(-1);
     }
     *top = tmp->next;
     data = tmp->data;
@@ -34,7 +34,11 @@ void push(msnode **top, int x)
     *top = tmp;
 }
 
-void top()
+int peek(msnode *top)
 {
-    
+    if (!top)
+    {
+        return (-1);
+    }
+    return (top->data);
 }

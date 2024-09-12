@@ -17,6 +17,7 @@ typedef struct MyStackNode
 
 int pop(msnode **top);
 void push(msnode **top, int x);
+int peek(msnode *top);
 
 
 
