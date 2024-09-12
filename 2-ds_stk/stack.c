@@ -42,3 +42,12 @@ int peek(msnode *top)
     }
     return (top->data);
 }
+
+bool isEmpty(msnode *top)
+{
+    if (!top)
+    {
+        return (True);
+    }
+    return (False);
+}
