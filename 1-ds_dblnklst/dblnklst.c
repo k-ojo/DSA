@@ -1,5 +1,12 @@
 #include "dblnklst.h"
 
+
+/**
+* _dinsert- inserts node to at the head doubly linked list
+* @head: head of list
+* @x: input data
+* Return: nothing
+ */
 void _dinsert(dnode **head, int x)
 {
     
@@ -16,6 +23,11 @@ void _dinsert(dnode **head, int x)
     *head = tmp;
 }
 
+/**
+* _dprintls- prints the doubly linked list
+* @head: head of list
+* Return: nothing
+ */
 void _dprintls(dnode *head)
 {
     if (head == NULL)
@@ -33,6 +45,11 @@ void _dprintls(dnode *head)
     
 }
 
+/**
+* _dfreels- free the doubly linked list from heap
+* @head: head of list
+* Return: nothing
+ */
 void _dfreels(dnode *head)
 {
     dnode *tmp;
@@ -45,6 +62,12 @@ void _dfreels(dnode *head)
     }
 }
 
+
+/**
+* _dreversed- reverses the doubly linked list
+* @head: head of list
+* Return: reverse linked list
+ */
 dnode *_dreversed(dnode *head)
 {
     dnode *nxt;
