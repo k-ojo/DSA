@@ -3,9 +3,6 @@
 #include "../0-ds_lnklst/lnklst.h"
 
 
-
-
-
 /**
 MyStackNode- node of stack
 @ data: data, could be anything
@@ -52,6 +49,8 @@ void _freestack(msnode **top);
 int _match(char c, msnode **top);
 int _atoi(char *str);
 bool isOperator(char c);
+int _handleDelim(msnode **top, char *str, char prev);
+int _len(char *str);
 
 //stackapp.c
 void checkBalancedParenthesis(char *str);

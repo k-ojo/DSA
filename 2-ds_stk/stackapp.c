@@ -37,3 +37,22 @@ void checkBalancedParenthesis(char *str)
     }
     printf("No issues\n");
 }
+
+int _cal(char *expr, char const delim)
+{
+    int i = 0; //j = 0, n = 0;
+    char str[_len(expr)];
+    msnode *top = NULL;
+
+    while (expr[i] != NULL)
+    {
+        if (expr[i] == delim && i > 0)
+        {
+            str[i] = '\0';
+            _handleDelim(&top, str, expr[i - 1]);
+        }
+        //switch (expr[i])
+        i++;
+    }
+
+}

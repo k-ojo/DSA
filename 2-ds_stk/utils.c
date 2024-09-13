@@ -94,3 +94,24 @@ bool isOperator(char c)
     }
     return (False);
 }
+
+int _handleDelim(msnode **top, char *str, char prev)
+{
+    int c;
+
+    if (isOperator(prev))
+        return;
+    c = _atoi(str);
+    push(top, &c, INT);
+
+    return (c);
+}
+
+int _len(char *str)
+{
+    int i = 0;
+
+    while (str[i] != '\0')
+        i++;
+    return (i);
+}
