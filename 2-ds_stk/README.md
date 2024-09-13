@@ -2,7 +2,7 @@
 
 A stack is a type of data structure that follows the FILO/LIFO (First in Last Out/ Last in First Out) rule. 
 
-## Abstract Data Tyoe(ADT) and Implementation
+## Abstract Data Type(ADT) and Implementation
 The following are the basic operation of a stack adt:
 
 1. pop()
