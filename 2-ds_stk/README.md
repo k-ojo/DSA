@@ -20,7 +20,7 @@ Returns the data at the top of stack
 ## APPLICATION
 
 1. Executing function  calls
-2. Checking the balancing if parenthesis. 
+2. Checking the balancing of parenthesis. 
 2. Infix, Postfix and Prefix
 
 Note: The implemention of only 1 and 2 are in this directory.
