@@ -39,6 +39,7 @@ typedef enum DataType
     INT, NODE, CHAR
 }type;
 
+//stack.c
 int pop(msnode **top);
 void push(msnode **top, void *x, type);
 void *peek(msnode *top);
@@ -46,8 +47,19 @@ bool isEmpty(msnode *top);
 void _freestack(msnode **top);
 
 //APPLICATION
+
+//utils.c
 int _match(char c, msnode **top);
-void checkBalancedParenthesis(char *str);
 int _atoi(char *str);
+bool isOperator(char c);
+
+//stackapp.c
+void checkBalancedParenthesis(char *str);
 int _cal(char *expr, char const delim);
-char *parseDelim(char *str, char c);
+
+///ophelper.c
+void _popnadd(msnode **top);
+void _popnsub(msnode **top);
+void _popnmul(msnode **top);
+void _popndiv(msnode **top);
+void _popnexp(msnode **top);

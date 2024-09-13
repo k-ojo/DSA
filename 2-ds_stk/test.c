@@ -22,7 +22,8 @@ int main()
     push(&top, &data[3], INT);
     push(&top, &data[4], INT);
 
-    pop(&top);
+    _popnadd(&top);
+    _popnmul(&top);
 
     //pop(&top);
     printf("The top is: %i\n", *(int *)peek(top));
