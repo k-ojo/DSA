@@ -18,6 +18,7 @@ int main()
     //printf("The top is: %i\n", d->data);
 
     push(&top, &data[2], INT);
+    push(&top, ls, NODE);
     push(&top, &data[3], INT);
     push(&top, &data[4], INT);
 
@@ -26,8 +27,13 @@ int main()
     //pop(&top);
     printf("The top is: %i\n", *(int *)peek(top));
     
+    _freestack(&top);
     _lfreelist(ls);
 
-    //checkBalancedParenthesis("{{{{hhggfv");
+    if (top)
+        printf("The top is: %i\n", *(int *)peek(top));
+
+    //APPLICATION
+    checkBalancedParenthesis("((hhggfv");
 
 }

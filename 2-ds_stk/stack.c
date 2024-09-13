@@ -3,18 +3,22 @@
 /**
 * pop- pops the the top of stack
 * @top: top of stack
-* Return: nothing
+* Return: returns 0 on success, -1 on failure
 */
-void pop(msnode **top)
+int pop(msnode **top)
 {
-    msnode *tmp = *top;
+    msnode *tmp;
 
+    //printf("%p\n", *top);
     if (!top || *top == NULL)
     {
-        return;
+        return (-1);
     }
-    *top = tmp->next;
+
+    tmp = *top;
+    *top = (*top)->next;
     free(tmp);
+    return (0);
 }
 
 /**
@@ -25,7 +29,7 @@ void pop(msnode **top)
 */
 void push(msnode **top, void *x, type T)
 {
-    printf("Data: %i   Address: %p\n", *(int *)x, x);
+    //printf("Data: %i   Address: %p\n", *(int *)x, x);
     msnode *tmp = (msnode *)malloc(sizeof(msnode));
     switch(T)
     {
@@ -54,8 +58,6 @@ void *peek(msnode *top)
     if (!top)
         return (NULL);
 
-    printf("break\n");
-
     return (top->data);
 }
 
@@ -73,7 +75,17 @@ bool isEmpty(msnode *top)
     return (False);
 }
 
-
+/**
+*_freestack- frees memory allocated to stack
+* @top: top of stack
+* Return: Nothing
+*/
+void _freestack(msnode **top)
+{
+    //printf("%p\n", top);
+    while(top && !isEmpty(*top))
+        pop(top);
+}
 
 //APPLICATION
 
@@ -84,7 +96,7 @@ bool isEmpty(msnode *top)
 */
 void checkBalancedParenthesis(char *str)
 {
-    msnode *top;
+    msnode *top = NULL;  //very important to initialize to prevent memory leaks
     int i = 0;
 
     while(str[i] != '\0')
@@ -97,6 +109,7 @@ void checkBalancedParenthesis(char *str)
             if((_match(str[i], &top) == 0))
             {
                 printf("%s at character %i\n", str, i);
+                _freestack(&top);
                 return;
             }
         }
@@ -105,6 +118,8 @@ void checkBalancedParenthesis(char *str)
     if (!isEmpty(top))
     {
         printf("Missing parenthesis. %s at character %i\n", str, i);
+        _freestack(&top);
+
         return;
     }
     printf("No issues\n");
@@ -118,8 +133,11 @@ void checkBalancedParenthesis(char *str)
 */
 int _match(char c, msnode **top)
 {
-    if (!isEmpty(*top))  //if stack is not empty
+
+    if (!top || isEmpty(*top))  //if stack is not empty
     {
+        //printf("%c\n", *(char *)(*top)->data);
+
         printf("Parenthesis \"%c\" has no match. ", c);
         return (0);
     }
@@ -137,7 +155,8 @@ int _match(char c, msnode **top)
     else if (c =='}' || c == ']')
     {
         //these characters are 2 units distance from their pair
-        if (c == *(char *)(*top)->data + 2)
+        printf("%c\n", *(char *)(*top)->data);
+        if (*top && c == *(char *)(*top)->data + 2)
         {
             pop(top);
             return(1);
@@ -150,4 +169,3 @@ int _match(char c, msnode **top)
 
 
 // Infix, Postfix, Prefix
-

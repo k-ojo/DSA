@@ -76,7 +76,7 @@ int _linsertn(node **head, int x, int n)
     }
     if (n > i)
     {
-        printfd("Error: %d is not a valid index\n", n);
+        printf("Error: %d is not a valid index\n", n);
     }
     free(tmp);
     return (0);
@@ -132,10 +132,7 @@ node *_lreversels(node *head)
 void _lfreelist(node *head)
 {
     node *tmp;
-    if (!head)
-    {
-        return;
-    }
+    
     while (head != NULL)
     {
         tmp = head;

@@ -133,10 +133,7 @@ node *_lreversels(node *head)
 void _lfreelist(node *head)
 {
     node *tmp;
-    if (!head)
-    {
-        return;
-    }
+
     while (head != NULL)
     {
         tmp = head;
