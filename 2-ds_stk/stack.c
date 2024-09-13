@@ -25,6 +25,7 @@ void pop(msnode **top)
 */
 void push(msnode **top, void *x, type T)
 {
+    printf("Data: %i   Address: %p\n", *(int *)x, x);
     msnode *tmp = (msnode *)malloc(sizeof(msnode));
     switch(T)
     {
@@ -40,7 +41,7 @@ void push(msnode **top, void *x, type T)
     }
     
     tmp->next = *top;
-    *top = tmp;
+    *top = tmp;    
 }
 
 /**
@@ -51,9 +52,10 @@ void push(msnode **top, void *x, type T)
 void *peek(msnode *top)
 {
     if (!top)
-    {
         return (NULL);
-    }
+
+    printf("break\n");
+
     return (top->data);
 }
 
@@ -89,7 +91,7 @@ void checkBalancedParenthesis(char *str)
     {
         if (str[i] == '{' || str[i] == '(' || str[i] == '[')
             push(&top, &(str[i]), CHAR);
-        
+
         else if (str[i] == '}' || str[i] == ')' || str[i] == ']')
         {
             if((_match(str[i], &top) == 0))
@@ -145,3 +147,7 @@ int _match(char c, msnode **top)
     printf("Parenthesis \"%c\" has no match. ", c);
     return(0);
 }
+
+
+// Infix, Postfix, Prefix
+

@@ -181,7 +181,7 @@ int _ldeleten(node **hptr, int n)
 }
 
 /** 
-* _rprint: frees the list from allocated memory
+* _rprint: prints list in reverse using recursion
 * @h- head of linked list
 * Return: Nothing
 */
