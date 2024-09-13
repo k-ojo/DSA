@@ -43,6 +43,11 @@ void push(msnode **top, void *x, type T)
     *top = tmp;
 }
 
+/**
+* peek- get the top of stack
+* @top: top of stack
+* Return: Nothing
+*/
 void *peek(msnode *top)
 {
     if (!top)
@@ -52,6 +57,11 @@ void *peek(msnode *top)
     return (top->data);
 }
 
+/**
+* isEmpty- checks if stack is empty
+* @top: top of stack
+* Return: true(1) if empty 0 otherwise;
+*/
 bool isEmpty(msnode *top)
 {
     if (!top)
@@ -67,7 +77,8 @@ bool isEmpty(msnode *top)
 
 /**
 * checkBalancedParenthesis- stack definition
-*
+* @str: input string to check
+* Return: nothing
 */
 void checkBalancedParenthesis(char *str)
 {
@@ -98,6 +109,12 @@ void checkBalancedParenthesis(char *str)
     printf("No issues\n");
 }
 
+/**
+* _match- checks if character is used well using stack
+* @c: input character to be checked
+* @top: Top of stack
+* Return: Nothing
+*/
 int _match(char c, msnode **top)
 {
     if (!(*top))
