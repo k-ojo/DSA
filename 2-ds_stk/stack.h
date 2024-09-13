@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../0-ds_lnklst/lnklst.h"
 
+#define delim " "
 
 
 
@@ -47,3 +48,5 @@ void _freestack(msnode **top);
 //APPLICATION
 int _match(char c, msnode **top);
 void checkBalancedParenthesis(char *str);
+int _atoi(char *str);
+int _cal(char *expr);

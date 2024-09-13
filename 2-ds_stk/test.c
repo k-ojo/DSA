@@ -34,6 +34,8 @@ int main()
         printf("The top is: %i\n", *(int *)peek(top));
 
     //APPLICATION
-    checkBalancedParenthesis("((hhggfv");
+    //checkBalancedParenthesis("((hhggfv");
+
+    printf("%i\n", _atoi("1209102"));
 
 }
