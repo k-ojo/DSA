@@ -88,9 +88,8 @@ void checkBalancedParenthesis(char *str)
     while(str[i] != '\0')
     {
         if (str[i] == '{' || str[i] == '(' || str[i] == '[')
-        {
             push(&top, &(str[i]), CHAR);
-        }
+        
         else if (str[i] == '}' || str[i] == ')' || str[i] == ']')
         {
             if((_match(str[i], &top) == 0))
@@ -117,13 +116,15 @@ void checkBalancedParenthesis(char *str)
 */
 int _match(char c, msnode **top)
 {
-    if (!(*top))
+    if (!isEmpty(*top))  //if stack is not empty
     {
         printf("Parenthesis \"%c\" has no match. ", c);
         return (0);
     }
     if (c == ')')
     {
+        //ascii values are used to compare
+        //) is 41 and ( is 40  
         if (c == *(char *)(*top)->data + 1)
         {
             pop(top);
@@ -133,6 +134,7 @@ int _match(char c, msnode **top)
     }
     else if (c =='}' || c == ']')
     {
+        //these characters are 2 units distance from their pair
         if (c == *(char *)(*top)->data + 2)
         {
             pop(top);
