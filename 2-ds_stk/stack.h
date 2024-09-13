@@ -3,10 +3,6 @@
 #include "../0-ds_lnklst/lnklst.h"
 
 
-typedef enum {
-    False = 0,
-    True = 1
-}bool;
 
 
 /**
@@ -21,9 +17,15 @@ typedef struct MyStackNode
 
 }msnode;
 
+
+typedef enum {
+    False = 0,
+    True = 1
+}bool;
+
 typedef enum DataType
 {
-    INT, NODE
+    INT, NODE, CHAR
 }type;
 
 void pop(msnode **top);
@@ -32,3 +34,5 @@ void *peek(msnode *top);
 bool isEmpty(msnode *top);
 
 //APPLICATION
+int _match(char c, msnode **top);
+void checkBalancedParenthesis(char *str);
