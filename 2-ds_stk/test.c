@@ -36,10 +36,6 @@ int main()
     //APPLICATION
     //checkBalancedParenthesis("((hhggfv");
 
-    printf("%i\n", _atoi("1209102"));
-
     //_cal("71928, 1829, 129,+,+", ',');
 
-    char str[] = "67239,839,2389,+,-";
-    parseDelim(str, ',');
 }
