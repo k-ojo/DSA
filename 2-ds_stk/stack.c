@@ -90,7 +90,7 @@ void checkBalancedParenthesis(char *str)
         }
         i++;
     }
-    if (top)
+    if (!isEmpty(top))
     {
         printf("Missing parenthesis. %s at character %i\n", str, i);
         return;
