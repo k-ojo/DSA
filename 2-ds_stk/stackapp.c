@@ -133,13 +133,33 @@ bool isOperator(char c)
     return (False);
 }
 
+char *parseDelim(char *str, char c)
+{
+    int i = 0;
+    printf("char: %c  i:  %i", 'v', i);
 
+    if (str == NULL)
+        return (NULL);
+    
+
+    while (str[i] != '\0')
+    {
+        
+        if (str[i] == c)
+        {
+            str[i] = '$';
+        } 
+        i++;
+    }
+    return (str);
+
+}
 /**
 _cal- calculates an input expression
 * @expr: expression
 * Return: the calculated expression
 */
-int _cal(char *expr)
+int _cal(char *expr, char const delim)
 {
 
     char *str = expr;
@@ -147,8 +167,25 @@ int _cal(char *expr)
     int a, b, c;
     msnode *top = NULL;
 
+    expr = parseDelim(expr, delim);
+
     while (expr[i] != '\0')
     {
+        if (expr[i] == delim)
+        {
+            if (i != 0 && isOperator(expr[i-1]))
+            {
+                i++;
+               continue;
+            }
+
+            str[i] = '\0';
+            c = _atoi(str);
+            push(&top, &c, INT);
+            str = &expr[i + 1];
+            i++;
+            continue;
+        }
         switch (expr[i])
         {
             case '*':
@@ -196,20 +233,11 @@ int _cal(char *expr)
             push(&top, &c, INT);
             break;
 
-            case ' ':
-            
-            if (isOperator(expr[i]))
-            {
-               break;
-            }
-
-            str[i] = '\0';
-            c = _atoi(str);
-            push(&top, &c, INT);
-            str = &expr[i + 1];
+            case '$':
         }
-
         i++;
     }
+
+    _freestack(&top);
     return (0);
 }
