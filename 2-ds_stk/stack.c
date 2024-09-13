@@ -82,31 +82,33 @@ void checkBalancedParenthesis(char *str)
         }
         else if (str[i] == '}' || str[i] == ')' || str[i] == ']')
         {
-            if(!(_match(str[i], &top)));
+            if((_match(str[i], &top) == 0))
             {
                 printf("%s at character %i\n", str, i);
+                return;
             }
         }
         i++;
     }
-    if (!top)
+    if (top)
     {
         printf("Missing parenthesis. %s at character %i\n", str, i);
+        return;
     }
+    printf("No issues\n");
 }
 
 int _match(char c, msnode **top)
 {
     if (!(*top))
     {
-        printf("Parenthesis has no match\n");
+        printf("Parenthesis \"%c\" has no match. ", c);
         return (0);
     }
     if (c == ')')
     {
         if (c == *(char *)(*top)->data + 1)
         {
-            printf("c = %c,   data = %c\n", c, *(char *)(*top)->data);
             pop(top);
             return(1);
         }

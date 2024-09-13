@@ -31,6 +31,6 @@ int main()
 
     printf("The top is: %i\n", *(int *)peek(top));
 
-    checkBalancedParenthesis("[isanic)");
+    checkBalancedParenthesis("isanic { dsdi} [sakkjj]]");
 
 }
