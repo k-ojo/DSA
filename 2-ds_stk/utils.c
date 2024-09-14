@@ -100,8 +100,10 @@ int _handleDelim(msnode **top, char *str, char prev)
     int *c = (int *)malloc(sizeof(int));
 
     if (isOperator(prev))
+    {
+        free(c);
         return (-1);
-
+    }
     *c = _atoi(str);
 
     push(top, c, INT);

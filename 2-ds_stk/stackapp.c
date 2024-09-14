@@ -67,7 +67,8 @@ int _cal(char *expr, char const delim)
         i++;
         j++;
     }
-    
+
     j = *(int *)(peek(top));
+    _freestack(&top);
     return (j);
 }

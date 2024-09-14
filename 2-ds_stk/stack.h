@@ -1,9 +1,11 @@
+#ifndef _STACK
+#define _STACK
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "../0-ds_lnklst/lnklst.h"
 
-
-
+extern int c1, c2;
 /*
 * _bool- Bolean type
 * @False: Boolean False = 0
@@ -66,3 +68,5 @@ int _popnsub(msnode **top);
 int _popnmul(msnode **top);
 int _popndiv(msnode **top);
 int _popnexp(msnode **top);
+
+#endif

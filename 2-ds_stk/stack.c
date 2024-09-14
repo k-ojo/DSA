@@ -17,8 +17,10 @@ int pop(msnode **top)
     *top = (*top)->next;
 
     if (tmp->flag)
+    {
+        c1++;
         free(tmp->data);
-
+    }
     free(tmp);
     return (0);
 }
@@ -33,6 +35,7 @@ void push(msnode **top, void *x, type T)
 {
     //printf("Data: %i   Address: %p\n", *(int *)x, x);
     msnode *tmp = (msnode *)malloc(sizeof(msnode));
+    c2++;
     switch(T)
     {
         case INT:
