@@ -8,21 +8,23 @@
 */
 int _popnmul(msnode **top)
 {
-    int *a, *b, *c = (int *)malloc(sizeof(int));
+    int a, b, *c = (int *)malloc(sizeof(int));
     
     if (!top || top == NULL)
         return (-1);
 
-    a = (int *)peek(*top);
+    a = *(int *)peek(*top);
     pop(top);
 
     if (*top == NULL)
         return (-1);
-    b = (int *)peek(*top);
+    b = *(int *)peek(*top);
     pop(top);
 
-    *c = *a * *b;
+    *c = a * b;
     push(top, c, INT);
+    (*top)->flag = True;
+
 
     return (0);
     //free(a);
@@ -38,23 +40,23 @@ int _popnmul(msnode **top)
 */
 int _popnadd(msnode **top)
 {
-    int *a, *b, *c = (int *)malloc(sizeof(int));
-    int tmp;
+    int a, b, *c = (int *)malloc(sizeof(int));
     
     if (!top || top == NULL)
         return (-1);
 
-    a = (int *)peek(*top);
-    tmp = *a;
+    a = *(int *)peek(*top);
     pop(top);
 
     if (*top == NULL)
         return (-1);
-    b = (int *)peek(*top);
+    b = *(int *)peek(*top);
     pop(top);
 
-    *c = tmp + *b;
+    *c = a + b;
     push(top, c, INT);
+    (*top)->flag = True;
+
 
     return (0);    
 }
@@ -67,22 +69,24 @@ int _popnadd(msnode **top)
 */
 int _popnsub(msnode **top)
 {
-    int *a, *b, *c = (int *)malloc(sizeof(int));
+    int a, b, *c = (int *)malloc(sizeof(int));
     
     if (!top || top == NULL)
         return (-1);
 
-    a = (int *)peek(*top);
+    a = *(int *)peek(*top);
     pop(top);
 
     if (*top == NULL)
         return (-1);
 
-    b = (int *)peek(*top);
+    b = *(int *)peek(*top);
     pop(top);
 
-    *c = *b - *a;
+    *c = b - a;
     push(top, c, INT);
+    (*top)->flag = True;
+
 
     return (0);
     //free(a);
@@ -98,22 +102,24 @@ int _popnsub(msnode **top)
 */
 int _popndiv(msnode **top)
 {
-    int *a, *b, *c = (int *)malloc(sizeof(int));
+    int a, b, *c = (int *)malloc(sizeof(int));
     
     if (!top || top == NULL)
         return (-1);
 
-    a = (int *)peek(*top);
+    a = *(int *)peek(*top);
     pop(top);
 
     if (*top == NULL)
         return (-1);
 
-    b = (int *)peek(*top);
+    b = *(int *)peek(*top);
     pop(top);
 
-    *c = *b / *a;
+    *c = b / a;
     push(top, c, INT);
+    (*top)->flag = True;
+
 
     return (0);
     //free(a);
@@ -129,21 +135,23 @@ int _popndiv(msnode **top)
 */
 int _popnexp(msnode **top)
 {
-    int *a, *b, *c = (int *)malloc(sizeof(int));
+    int a, b, *c = (int *)malloc(sizeof(int));
     
     if (!top || *top == NULL)
         return (-1);
 
-    a = (int *)peek(*top);
+    a = *(int *)peek(*top);
     pop(top);
 
     if (*top == NULL)
         return (-1);
 
-    b = (int *)peek(*top);
+    b = *(int *)peek(*top);
 
-    *c = *a ^ *b;
+    *c = a ^ b;
     push(top, c, INT);
+    (*top)->flag = True;
+
     
     return (0);
 }

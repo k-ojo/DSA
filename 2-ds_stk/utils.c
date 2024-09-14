@@ -104,8 +104,8 @@ int _handleDelim(msnode **top, char *str, char prev)
 
     *c = _atoi(str);
 
-
     push(top, c, INT);
+    (*top)->flag = True;
 
     return (*c);
 }

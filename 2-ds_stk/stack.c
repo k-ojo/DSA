@@ -15,6 +15,10 @@ int pop(msnode **top)
 
     tmp = *top;
     *top = (*top)->next;
+
+    if (tmp->flag)
+        free(tmp->data);
+
     free(tmp);
     return (0);
 }
@@ -42,7 +46,7 @@ void push(msnode **top, void *x, type T)
         break;
     }
     
-    tmp->flag = False;
+    tmp->flag = False;  //default
     tmp->next = *top;
     *top = tmp;    
 }

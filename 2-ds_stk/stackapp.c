@@ -67,7 +67,7 @@ int _cal(char *expr, char const delim)
         i++;
         j++;
     }
+    
     j = *(int *)(peek(top));
     return (j);
-
 }
