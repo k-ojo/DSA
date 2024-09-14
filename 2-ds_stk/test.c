@@ -9,7 +9,7 @@ int main()
     _linsert(&ls, 75);
     _linsert(&ls, 43);
 
-    int data[] = {91, 12, 192, 129, 67, 34};
+    int data[] = {1, 1, 1, 1, 1, 1};
 
     push(&top, &data[0], INT);
     push(&top, &data[1], INT);
@@ -23,20 +23,20 @@ int main()
     push(&top, &data[4], INT);
 
     _popnadd(&top);
-    _popnmul(&top);
+    //_popnmul(&top);
 
     //pop(&top);
-    printf("The top is: %i\n", *(int *)peek(top));
+    //printf("The top is: %i\n", *(int *)peek(top));
     
     _freestack(&top);
     _lfreelist(ls);
 
-    if (top)
-        printf("The top is: %i\n", *(int *)peek(top));
+    //if (top)
+    //    printf("The top is: %i\n", *(int *)peek(top));
 
     //APPLICATION
     //checkBalancedParenthesis("((hhggfv");
 
-    //_cal("71928, 1829, 129,+,+", ',');
+    printf("%i\n", _cal("90, 4,*, 17, 1, 1,+,+,/", ','));
 
 }

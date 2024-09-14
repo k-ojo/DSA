@@ -4,118 +4,146 @@
 * _popnadd- pop and multiply
 * @top: top of stack
 *
-* Return- nothing
+* Return: -1 on success, 0 on success
 */
-void _popnmul(msnode **top)
+int _popnmul(msnode **top)
 {
-    int a, b, c;
+    int *a, *b, *c = (int *)malloc(sizeof(int));
     
     if (!top || top == NULL)
-        return;
+        return (-1);
 
-    a = *(int *)peek(*top);
+    a = (int *)peek(*top);
     pop(top);
 
-    b = *(int *)peek(*top);
+    if (*top == NULL)
+        return (-1);
+    b = (int *)peek(*top);
     pop(top);
 
-    c = a * b;
+    *c = *a * *b;
+    push(top, c, INT);
 
-    push(top, &c, INT);
+    return (0);
+    //free(a);
+    //free(b);
 }
+
 
 /**
 * _popnadd- pop and add
 * @top: top of stack
 *
-* Return- nothing
+* Return: -1 on failure, 0 for success
 */
-void _popnadd(msnode **top)
+int _popnadd(msnode **top)
 {
-    int a, b, c;
+    int *a, *b, *c = (int *)malloc(sizeof(int));
+    int tmp;
     
     if (!top || top == NULL)
-        return;
+        return (-1);
 
-    a = *(int *)peek(*top);
+    a = (int *)peek(*top);
+    tmp = *a;
     pop(top);
 
-    b = *(int *)peek(*top);
+    if (*top == NULL)
+        return (-1);
+    b = (int *)peek(*top);
     pop(top);
 
-    c = a + b;
+    *c = tmp + *b;
+    push(top, c, INT);
 
-    push(top, &c, INT);
+    return (0);    
 }
 
 /**
 * _popnadd- pop and subtract
 * @top: top of stack
 *
-* Return- nothing
+* Return: -1 on failure, 0 on success 
 */
-void _popnsub(msnode **top)
+int _popnsub(msnode **top)
 {
-    int a, b, c;
+    int *a, *b, *c = (int *)malloc(sizeof(int));
     
     if (!top || top == NULL)
-        return;
+        return (-1);
 
-    a = *(int *)peek(*top);
+    a = (int *)peek(*top);
     pop(top);
 
-    b = *(int *)peek(*top);
+    if (*top == NULL)
+        return (-1);
+
+    b = (int *)peek(*top);
     pop(top);
 
-    c = a - b;
+    *c = *b - *a;
+    push(top, c, INT);
 
-    push(top, &c, INT);
+    return (0);
+    //free(a);
+    //free(b);
+    
 }
 
 /**
 * _popnadd- pop and divide
 * @top: top of stack
 *
-* Return- nothing
+* Return: -1 on failure 0 on success
 */
-void _popndiv(msnode **top)
+int _popndiv(msnode **top)
 {
-    int a, b, c;
+    int *a, *b, *c = (int *)malloc(sizeof(int));
     
     if (!top || top == NULL)
-        return;
+        return (-1);
 
-    a = *(int *)peek(*top);
+    a = (int *)peek(*top);
     pop(top);
 
-    b = *(int *)peek(*top);
+    if (*top == NULL)
+        return (-1);
+
+    b = (int *)peek(*top);
     pop(top);
 
-    c = a / b;
+    *c = *b / *a;
+    push(top, c, INT);
 
-    push(top, &c, INT);
+    return (0);
+    //free(a);
+    //free(b);
 }
+
 
 /**
 * _popnadd- pop and exponent
 * @top: top of stack
 *
-* Return- nothing
+* Return: -1 on falure, 0 on success
 */
-void _popnexp(msnode **top)
+int _popnexp(msnode **top)
 {
-    int a, b, c;
+    int *a, *b, *c = (int *)malloc(sizeof(int));
     
-    if (!top || top == NULL)
-        return;
+    if (!top || *top == NULL)
+        return (-1);
 
-    a = *(int *)peek(*top);
+    a = (int *)peek(*top);
     pop(top);
 
-    b = *(int *)peek(*top);
-    pop(top);
+    if (*top == NULL)
+        return (-1);
 
-    c = a ^ b;
+    b = (int *)peek(*top);
 
-    push(top, &c, INT);
+    *c = *a ^ *b;
+    push(top, c, INT);
+    
+    return (0);
 }

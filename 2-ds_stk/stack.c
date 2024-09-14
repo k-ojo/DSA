@@ -11,9 +11,7 @@ int pop(msnode **top)
 
     //printf("%p\n", *top);
     if (!top || *top == NULL)
-    {
         return (-1);
-    }
 
     tmp = *top;
     *top = (*top)->next;
@@ -44,6 +42,7 @@ void push(msnode **top, void *x, type T)
         break;
     }
     
+    tmp->flag = False;
     tmp->next = *top;
     *top = tmp;    
 }

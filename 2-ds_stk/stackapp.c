@@ -40,19 +40,34 @@ void checkBalancedParenthesis(char *str)
 
 int _cal(char *expr, char const delim)
 {
-    int i = 0; //j = 0, n = 0;
-    char str[_len(expr)];
+    int i = 0, j = 0;
+    char str[_len(expr)];  //list to temporarily
     msnode *top = NULL;
 
-    while (expr[i] != NULL)
+    while (expr[i] != '\0')
     {
         if (expr[i] == delim && i > 0)
         {
-            str[i] = '\0';
+            str[j] = '\0';
             _handleDelim(&top, str, expr[i - 1]);
+            j = 0;
+            i++;
+            continue;
         }
-        //switch (expr[i])
+        else if (isOperator(expr[i]))
+        {
+            //printf("break\n");
+            handleOp(&top, expr[i]);
+
+            i++;
+            continue;
+        }
+
+        str[j] = expr[i];
         i++;
+        j++;
     }
+    j = *(int *)(peek(top));
+    return (j);
 
 }

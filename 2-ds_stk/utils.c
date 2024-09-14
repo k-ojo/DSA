@@ -68,10 +68,10 @@ int _atoi(char *str)
     
     for (n--; n >= 0; n--)
     {
-        if (str[n] < 48 || str[n] > 48 + 9)
-            return (-1);
         if (str[n] == ' ')
             continue;
+        if (str[n] < 48 || str[n] > 48 + 9)
+            return (-1);
 
         tmp += p * (0 + str[n] - 48);
         p *= 10; 
@@ -97,14 +97,17 @@ bool isOperator(char c)
 
 int _handleDelim(msnode **top, char *str, char prev)
 {
-    int c;
+    int *c = (int *)malloc(sizeof(int));
 
     if (isOperator(prev))
-        return;
-    c = _atoi(str);
-    push(top, &c, INT);
+        return (-1);
 
-    return (c);
+    *c = _atoi(str);
+
+
+    push(top, c, INT);
+
+    return (*c);
 }
 
 int _len(char *str)
@@ -114,4 +117,35 @@ int _len(char *str)
     while (str[i] != '\0')
         i++;
     return (i);
+}
+
+void handleOp(msnode **top, char c)
+{
+    printf("##The top is: %i\n", *(int *)peek(*top));
+
+    switch (c)
+    {
+        case '+':
+        //pop(top);
+        _popnadd(top);
+
+        break;
+
+        break;
+        case '*':
+        _popnmul(top);
+        break;
+
+        case '-':
+        _popnsub(top);
+        break;
+
+        case '/':
+        _popndiv(top);
+        break;
+
+        case '^':
+        _popnexp(top);
+        break;
+    }
 }
