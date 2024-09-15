@@ -82,7 +82,7 @@ int _atoi(char *str)
 
 /**
 *isOperator- checks if character is an operator
-* @c: character
+* @c: input operations
 * Return: True if opertaor, False if not
 */
 bool isOperator(char c)
@@ -95,6 +95,13 @@ bool isOperator(char c)
     return (False);
 }
 
+/**
+* _handleDelim- handles
+* @top: top of stack
+* @str: input string
+* @prev: Previous character
+* Return: Nothing
+*/
 int _handleDelim(msnode **top, char *str, char prev)
 {
     int *c = (int *)malloc(sizeof(int));
@@ -112,6 +119,11 @@ int _handleDelim(msnode **top, char *str, char prev)
     return (*c);
 }
 
+/**
+*_len-finds the length of a string
+* @str: input string
+* Return: nothing
+*/
 int _len(char *str)
 {
     int i = 0;
@@ -121,6 +133,13 @@ int _len(char *str)
     return (i);
 }
 
+
+/**
+* handleOp- handles encounter with
+* @top: top of stack
+* @c: input operator
+* Return: Nothing
+*/
 void handleOp(msnode **top, char c)
 {
     printf("##The top is: %i\n", *(int *)peek(*top));
