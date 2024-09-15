@@ -1,5 +1,7 @@
 #include "stack.h"
 
+// Infix, Postfix, Prefix
+
 /**
 * _match- checks if character is used well using stack
 * @c: input character to be checked
@@ -41,9 +43,6 @@ int _match(char c, msnode **top)
     printf("Parenthesis \"%c\" has no match. ", c);
     return(0);
 }
-
-
-// Infix, Postfix, Prefix
 
 /**
 * _atoi- converts a string to integr
