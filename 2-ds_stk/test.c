@@ -2,7 +2,7 @@
 
 int c1 = 0;
 int c2 = 0;
-int main()
+int main(void)
 {
     msnode *top = NULL;
     node *ls = NULL;
@@ -40,6 +40,7 @@ int main()
     //APPLICATION
     //checkBalancedParenthesis("((hhggfv");
 
-    printf("%i\n", _cal("90, 4,*, 17, 1, 1,+,+,/", ','));
+    printf("%i\n", _cal("90, 4, /", ','));
     printf("c1 = %i   c2 = %i\n", c1, c2);
+
 }

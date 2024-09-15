@@ -38,6 +38,12 @@ void checkBalancedParenthesis(char *str)
     printf("No issues\n");
 }
 
+/**
+* _cal- calculates postfix expression using a stack
+* @expr: the expression
+* @delim: delimiter
+* Return: The result
+*/
 int _cal(char *expr, char const delim)
 {
     int i = 0, j = 0;
