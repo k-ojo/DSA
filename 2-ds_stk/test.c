@@ -1,7 +1,7 @@
 #include "stack.h"
 
-int c1 = 0;
-int c2 = 0;
+int c1 = 0;  //used in debugging
+int c2 = 0; //used in debugging
 int main(void)
 {
     msnode *top = NULL;
@@ -15,6 +15,7 @@ int main(void)
 
     push(&top, &data[0], INT);
     push(&top, &data[1], INT);
+
     //push(&top, ls, NODE);
     //node *d = (node *)peek(top);
     //printf("The top is: %i\n", d->data);
@@ -26,7 +27,6 @@ int main(void)
 
     _popnadd(&top);
     //_popnmul(&top);
-
     //pop(&top);
     //printf("The top is: %i\n", *(int *)peek(top));
     
@@ -40,7 +40,7 @@ int main(void)
     //APPLICATION
     //checkBalancedParenthesis("((hhggfv");
 
-    printf("%i\n", _cal("90, 4, /", ','));
+    printf("%i\n", _cal("2 , 3, *, 5, 4, *, +, 9, -", ','));
     printf("c1 = %i   c2 = %i\n", c1, c2);
 
 }
