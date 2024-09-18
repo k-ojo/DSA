@@ -27,7 +27,7 @@ void enqueue(queue *q, void *data)
 
 /**
 * qinit- initializes queue
-* Return: Initiazed queue
+* Return: Initialized queue
 */
 queue *qinit(void)
 {
