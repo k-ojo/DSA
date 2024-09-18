@@ -1,3 +1,6 @@
+#ifndef _LIST
+#define _LIST
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,3 +25,5 @@ int _ldeleten(node **hptr, int n);
 void _lrprint(node *h);
 int _linsertn(node **head, int x, int n);
 node *_lreversed(node *p);
+
+#endif

@@ -7,6 +7,6 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall")
 
-file(GLOB SOURCES "*.c" "../0-ds_lnklst/lnklst.c")
+file(GLOB SOURCES "*.c")
 
 add_executable(app ${SOURCES})
