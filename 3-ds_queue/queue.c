@@ -82,3 +82,16 @@ bool isEmpty(queue *q)
         return (True);
     return (False);
 }
+
+/**
+* peek- returns the front value of the queue
+* @q: Queue
+* Return: The peeked value
+*/
+void *peek(queue *q)
+{
+    if (!q || !q->front)
+        return (NULL);
+
+    return (q->front->data);
+}

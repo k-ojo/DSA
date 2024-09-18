@@ -27,7 +27,6 @@ void *deque(queue *q);
 queue *qinit(void);
 void freeq(queue *q);
 bool isEmpty(queue *q);
-
-
+void *peek(queue *q);
 
 #endif
