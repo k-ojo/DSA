@@ -70,3 +70,15 @@ void freeq(queue *q)
         deque(q);
     free(q);
 }
+
+/**
+* isEmpty- Checks if queue is empty
+* @q: Queue
+* Return: True if empty, False if not
+*/
+bool isEmpty(queue *q)
+{
+    if (q->front == NULL)
+        return (True);
+    return (False);
+}

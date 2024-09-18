@@ -7,7 +7,9 @@ int main(void)
     queue *q = qinit();
 
     enqueue(q, &data);
-    ptr = (int *)deque(q);
+
+    if (!isEmpty(q))
+        ptr = (int *)deque(q);
 
     printf("%i\n", *ptr);
     freeq(q);

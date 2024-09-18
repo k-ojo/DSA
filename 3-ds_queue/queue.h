@@ -17,9 +17,17 @@ typedef struct Queue
 
 }queue;
 
+typedef enum _bool{
+    False = 0,
+    True = 1
+}bool;
+
 void enqueue(queue *q, void *data);
 void *deque(queue *q);
 queue *qinit(void);
 void freeq(queue *q);
+bool isEmpty(queue *q);
+
+
 
 #endif
