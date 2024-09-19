@@ -4,12 +4,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+* QueueNode- node
+* @data: data
+* @next: pointer to next node
+* 
+*/
 typedef struct QueueNode
 {
     void *data;
     struct QueueNode *next;
 }qnode;
 
+
+/**
+* Queue- node
+* @front: front node in queue
+* @rear: rear node in queue
+* 
+*/
 typedef struct Queue
 {
     qnode *front; //front of queue
@@ -17,6 +30,12 @@ typedef struct Queue
 
 }queue;
 
+/**
+* _bool- node
+* @False: front node in queue
+* @True: rear node in queue
+* 
+*/
 typedef enum _bool{
     False = 0,
     True = 1
