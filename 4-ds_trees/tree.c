@@ -40,3 +40,17 @@ bnode *_binsertInt(bnode *root, void *data)
     return (root);
 
 }
+
+
+bnode *_searchInt(bnode *root, int data)
+{
+    if (!root)
+        return (NULL);
+    if (*(int *)(root->data) == data)
+        return (root);
+    if (*(int *)(root->data) > data)
+        return(_searchInt(root->left, data));
+    else
+        return (_searchInt(root->right, data));
+    return (0);
+}

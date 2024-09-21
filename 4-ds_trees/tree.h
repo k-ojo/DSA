@@ -24,5 +24,5 @@ typedef enum _Type
 
 bnode *binit(void *data);
 bnode *_binsertInt(bnode *root, void *data);
-bnode *search(bnode *root, void *data);
+bnode *_searchInt(bnode *root, int data);
 void _remove(bnode *root, void *data);
