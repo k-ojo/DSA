@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 /**
+* BSTNode- Binary Search Tree Node
 * @data: node data
 * @left: left child
 * @right: right child
@@ -9,11 +10,19 @@
 typedef struct BSTNode 
 {
     void *data;
-    Node *left;
-    Node *right;
+    struct BSTNode *left;
+    struct BSTNode *right;
 
 }bnode;
 
+typedef enum _Type
+{
+    INT,
+    FLT,
+    NDE
+}typ;
+
 bnode *binit(void *data);
-void binsert(bnode *root, void *data);
+bnode *_binsertInt(bnode *root, void *data);
 bnode *search(bnode *root, void *data);
+void _remove(bnode *root, void *data);
