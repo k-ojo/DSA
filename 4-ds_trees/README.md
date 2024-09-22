@@ -1,5 +1,6 @@
 # Tree
 
+## Introduction
 A tree is a non linear data structure that is usually used to store a hierarchical.
 
 ### Definition

@@ -15,14 +15,27 @@ typedef struct BSTNode
 
 }bnode;
 
-typedef enum _Type
+/*
+* _bool- Bolean type
+* @False: Boolean False = 0
+* @True: True = 1
+*/
+typedef enum _myBool
 {
-    INT,
-    FLT,
-    NDE
-}typ;
+    False = 0,
+    True = 1
+}mbool;
 
+//tree.c
 bnode *binit(void *data);
 bnode *_binsertInt(bnode *root, void *data);
 bnode *_searchInt(bnode *root, int data);
 void _remove(bnode *root, void *data);
+bnode *_bmax(bnode *root);
+bnode *_bmin(bnode *root);
+int _bheight(bnode *);
+
+//utils.c
+int _max(int a, int b);
+int _min(int a, int b);
+

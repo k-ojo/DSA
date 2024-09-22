@@ -28,7 +28,6 @@ bnode *_binsertInt(bnode *root, void *data)
 {
     if (!root)
     {
-        printf("%i  -> Break\n", *(int *)data);
         root = binit(data);
         return (root);
     }
@@ -41,7 +40,11 @@ bnode *_binsertInt(bnode *root, void *data)
 
 }
 
-
+/**
+* _searchInt- searches of integer is in the tree
+* @root: the root of the tree to be searched
+* @data: data to be searched
+*/
 bnode *_searchInt(bnode *root, int data)
 {
     if (!root)
@@ -54,3 +57,41 @@ bnode *_searchInt(bnode *root, int data)
         return (_searchInt(root->right, data));
     return (0);
 }
+
+/**
+* _bmin- returns node with minimum value
+* @root: the tree root
+* Return- The min node
+*/
+bnode *_bmin(bnode *r)
+{
+    if (r == NULL)
+        return (NULL);
+    if (r->left == NULL)
+        return (r);
+    return (_bmin(r->left)); 
+}
+
+/**
+* _bmax- returns node with maximum value
+* @root: the tree root
+* Return- The maximum node
+*/
+bnode *_bmax(bnode *r)
+{
+    if (r == NULL)
+        return (NULL);
+    if (r->right == NULL)
+        return (r);
+    return (_bmax(r->right)); 
+}
+
+int _bheight(bnode *r)
+{
+    if (!r)
+        return (-1);
+    int a = _bheight(r->left), b = _bheight(r->right);
+    return (_max(a, b) + 1);
+
+}
+
