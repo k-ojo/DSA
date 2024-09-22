@@ -86,6 +86,13 @@ bnode *_bmax(bnode *r)
     return (_bmax(r->right)); 
 }
 
+/**
+* @_bheight- height of binary tree
+* @r: the root of tree
+* Return- height binary tree
+*
+* time complexity of O(n)
+*/
 int _bheight(bnode *r)
 {
     if (!r)
