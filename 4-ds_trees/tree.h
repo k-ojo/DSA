@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define errno 99
 /**
 * BSTNode- Binary Search Tree Node
 * @data: node data
@@ -28,7 +29,7 @@ typedef enum _myBool
 
 //tree.c
 bnode *binit(void *data);
-bnode *_binsertInt(bnode *root, void *data);
+bnode *_binsertInt(bnode *root, int data);
 bnode *_searchInt(bnode *root, int data);
 void _remove(bnode *root, void *data);
 bnode *_bmax(bnode *root);
@@ -38,4 +39,5 @@ int _bheight(bnode *);
 //utils.c
 int _max(int a, int b);
 int _min(int a, int b);
+int _isGtr(char *s1, char *s2);
 
