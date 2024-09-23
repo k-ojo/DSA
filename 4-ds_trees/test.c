@@ -36,8 +36,12 @@ int  main(void)
 
     //bltraverse(root);
     //bpreotr(root);
-    binotr(root);
     //bposrtr(root);
+    //binotr(root);
+
+    //*(int *)(root->data) = 80;
+    if (isBst(root))
+        binotr(root);
 
     return (0);
 }

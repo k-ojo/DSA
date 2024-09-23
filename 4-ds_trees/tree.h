@@ -30,14 +30,19 @@ typedef enum _myBool
     True = 1
 }mbool;
 */
+
 //tree.c
 bnode *binit(void *data);
 bnode *_binsertInt(bnode *root, int data);
 bnode *_searchInt(bnode *root, int data);
 void _remove(bnode *root, void *data);
+
+//butils.c
 bnode *_bmax(bnode *root);
 bnode *_bmin(bnode *root);
 int _bheight(bnode *);
+int isBst(bnode *root);
+int _isBst(bnode *root, void *data);
 
 //traverse.c  
 void bltraverse(bnode *root);
