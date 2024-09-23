@@ -2,7 +2,7 @@
 
 int  main(void)
 {
-    //int d2 = 78, d4 = 190, d1 = 17, d3 = 540;
+    int d2 = 78, d4 = 190, d1 = 17, d3 = 540;
     int d5 = 90, d6 = 3;
     bnode *root = NULL;
 
@@ -13,6 +13,13 @@ int  main(void)
     root = _binsertInt(root, 6);
     root = _binsertInt(root, d5);
     root = _binsertInt(root, 67);
+    root = _binsertInt(root, d5);
+    root = _binsertInt(root, d2);
+    root = _binsertInt(root, d4);
+    root = _binsertInt(root, d1);
+    root = _binsertInt(root, d3);
+
+
 
     //testing
     bnode *tmp = _bmax(root);
@@ -25,12 +32,12 @@ int  main(void)
     printf("height of tree is: %i\n", _bheight(root));
 
     if (_isGtr("who is this motherfucker?", "stra"))
-        printf("One of the strings is NULL\n");
+        printf("It is greater\n");
 
     //bltraverse(root);
     //bpreotr(root);
-    //binotr(root);
-    bposrtr(root);
+    binotr(root);
+    //bposrtr(root);
 
     return (0);
 }

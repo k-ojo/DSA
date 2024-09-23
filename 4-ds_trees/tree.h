@@ -38,6 +38,8 @@ void _remove(bnode *root, void *data);
 bnode *_bmax(bnode *root);
 bnode *_bmin(bnode *root);
 int _bheight(bnode *);
+
+//traverse.c  
 void bltraverse(bnode *root);
 void bpreotr(bnode *root);
 void binotr(bnode *root);

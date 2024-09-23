@@ -10,6 +10,7 @@
 *           |-->Postorder
 *
 * NB: Conventionally, left child is visited before right child
+* time cmplexity of all functions is O(n). 
 */
 
 #include "tree.h"
@@ -17,6 +18,7 @@
 /**
 * bltraverse- binary tree level-order traversal
 * @root: root of tree
+* NB: space compexity is O(n). Queue grows to n/2 on worst/average case
 */
 void bltraverse(bnode *root)
 {
@@ -44,7 +46,7 @@ void bltraverse(bnode *root)
 /**
 * bpreotr- binary tree predrder traversal
 * @root: root of tree
-*
+* 
 */
 void bpreotr(bnode *root)
 {
@@ -72,6 +74,7 @@ void binotr(bnode *root)
 /**
 * bposrtr- binary tree postoder traversal
 * @root: root of tree
+*
 *
 */
 void bposrtr(bnode *root)
