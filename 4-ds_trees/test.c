@@ -7,7 +7,7 @@ int  main(void)
     bnode *root = NULL;
 
     //populate tree
-    root = _binsertInt(root, 800);
+    root = _binsertInt(root, 80);
     root = _binsertInt(root, d6);
     root = _binsertInt(root, 920);
     root = _binsertInt(root, 6);
@@ -26,6 +26,11 @@ int  main(void)
 
     if (_isGtr("who is this motherfucker?", "stra"))
         printf("One of the strings is NULL\n");
+
+    //bltraverse(root);
+    //bpreotr(root);
+    //binotr(root);
+    bposrtr(root);
 
     return (0);
 }

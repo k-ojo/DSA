@@ -50,16 +50,16 @@ bnode *_binsertInt(bnode *root, int d)
 * @root: the root of the tree to be searched
 * @data: data to be searched
 */
-void _searchInt(bnode **root, int data)
+bnode *_searchInt(bnode *root, int data)
 {
     if (!root)
         return (NULL);
-    if (*(int *)(*root->data) == data)
+    if (*(int *)(root->data) == data)
         return (root);
-    if (*(int *)(*root->data) > data)
-        return(_searchInt(*root->left, data));
+    if (*(int *)(root->data) > data)
+        return(_searchInt(root->left, data));
     else
-        return (_searchInt(*root->right, data));
+        return (_searchInt(root->right, data));
     return (0);
 }
 
@@ -105,4 +105,3 @@ int _bheight(bnode *r)
     int a = _bheight(r->left), b = _bheight(r->right);
     return (_max(a, b) + 1);
 }
-
