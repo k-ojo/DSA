@@ -1,3 +1,15 @@
+/*
+* Binary Tree Traversal
+*   |
+*   |-->Breadth-first
+*   |       |-->Level-Order
+*   |
+*   |-->Depth-first
+*           |-->Preorder
+*           |-->Inorder
+*           |-->Postorder
+*/
+
 #include "tree.h"
 
 /**
