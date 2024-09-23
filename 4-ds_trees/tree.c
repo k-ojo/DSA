@@ -104,6 +104,5 @@ int _bheight(bnode *r)
         return (-1);
     int a = _bheight(r->left), b = _bheight(r->right);
     return (_max(a, b) + 1);
-
 }
 
