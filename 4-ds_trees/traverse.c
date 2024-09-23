@@ -8,6 +8,8 @@
 *           |-->Preorder
 *           |-->Inorder
 *           |-->Postorder
+*
+* NB: Conventionally, left child is visited before right child
 */
 
 #include "tree.h"
