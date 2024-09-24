@@ -39,9 +39,9 @@ int  main(void)
     //bposrtr(root);
     //binotr(root);
 
-    //*(int *)(root->data) = 80;
-    if (isBst(root))
-        binotr(root);
+    *(int *)(root->data) = 80;
+    printf("Is it binary? %i\n", isBst(root));
+    //binotr(root);
 
     return (0);
 }
