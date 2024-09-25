@@ -74,3 +74,47 @@ int isBst(bnode *root)
     return(_isBst(root, &c));
 }
 
+/**
+* deleten- deletes integer from tree
+* @root: root of BST
+*
+* Return: address of new root
+*/
+bnode *deleten(bnode *root, int data)
+{
+    if (!root)
+        return (NULL);
+    if (*(int *)root->data > data)
+        root->left = deleten(root->left, data);
+    else if (*(int *)root->data < data)
+        root->right = deleten(root->right, data);
+    else
+    {
+        if (!root->right && !root->left)
+        {
+            free (root);
+            root = NULL;
+        }
+        else if (!root->right)
+        {
+            bnode *tmp = root;
+            root = tmp->right;
+            free (tmp);
+        }
+        else if (!root->left)
+        {
+            bnode *tmp = root;
+            root = tmp->left;
+            free (tmp);
+        }
+        else
+        {
+            bnode *tmp = _bmin(root->right);
+            root->data = tmp->data;
+            root->right = deleten(root->right, data);
+        }
+    }
+
+    return (root);
+}
+

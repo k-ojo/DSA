@@ -42,6 +42,7 @@ bnode *_binsertInt(bnode *root, int data);
 bnode *_searchInt(bnode *root, int data);
 void _remove(bnode *root, void *data);
 int isBst(bnode *root);
+bnode *deleten(bnode *root, int data);
 
 
 //butils.c

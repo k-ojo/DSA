@@ -40,8 +40,10 @@ int  main(void)
     //bposrtr(root);
     //binotr(root);
 
-    *(int *)(root->data) = 800;
+    root = deleten(root, 80);
     printf("Is it binary? %i\n", altisBST(root));
+    printf("Found, data is: %i\n", *(int *)(root->data));
+
     //binotr(root);
 
     return (0);
