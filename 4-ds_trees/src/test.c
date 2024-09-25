@@ -38,13 +38,13 @@ int  main(void)
     //bltraverse(root);
     //bpreotr(root);
     //bposrtr(root);
-    //binotr(root);
+    binotr(root);
 
     root = deleten(root, 80);
     printf("Is it binary? %i\n", altisBST(root));
-    printf("Found, data is: %i\n", *(int *)(root->data));
+    //printf("Succer: %i\n", *(int *)getSuccessor(root, 90)->data);
 
-    //binotr(root);
+    binotr(root);
 
     return (0);
 }

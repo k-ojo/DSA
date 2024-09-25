@@ -85,5 +85,4 @@ void bposrtr(bnode *root)
     bposrtr(root->left);
     bposrtr(root->right);
     printf("Data at node: %i\n", *(int *)root->data);
-
 }

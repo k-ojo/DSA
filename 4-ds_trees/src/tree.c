@@ -83,7 +83,7 @@ int isBst(bnode *root)
 bnode *deleten(bnode *root, int data)
 {
     if (!root)
-        return (NULL);
+        return (root);
     if (*(int *)root->data > data)
         root->left = deleten(root->left, data);
     else if (*(int *)root->data < data)
@@ -98,20 +98,20 @@ bnode *deleten(bnode *root, int data)
         else if (!root->right)
         {
             bnode *tmp = root;
-            root = tmp->right;
+            root = root->left;
             free (tmp);
         }
         else if (!root->left)
         {
             bnode *tmp = root;
-            root = tmp->left;
+            root = root->right;
             free (tmp);
         }
         else
         {
             bnode *tmp = _bmin(root->right);
             root->data = tmp->data;
-            root->right = deleten(root->right, data);
+            root->right = deleten(root->right, *(int *) tmp->data);
         }
     }
 

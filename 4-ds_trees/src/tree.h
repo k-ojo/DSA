@@ -54,6 +54,7 @@ int _isBst(bnode *root, void *data);
 //alt.c
 int _altisBST(bnode *root, int min, int max);
 int altisBST(bnode *root);
+bnode *getSuccessor(bnode *root, int data);
 
 //traverse.c  
 void bltraverse(bnode *root);
