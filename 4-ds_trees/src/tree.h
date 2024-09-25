@@ -2,7 +2,7 @@
 #define _TREE_
 #include <stdio.h>
 #include <stdlib.h>
-#include "../3-ds_queue/queue.h"
+#include "../../3-ds_queue/queue.h"
 
 
 #define errno 99
