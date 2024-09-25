@@ -70,6 +70,5 @@ int _isBst(bnode *root, void *data)
 int isBst(bnode *root)
 {
     int c = MIN_INT;
-    
     return(_isBst(root, &c));
 }
