@@ -42,8 +42,8 @@ bnode *getSuccessor(bnode *root, int data)
     if (!cur)
         return (NULL);
 
-    if (!cur->right)
-        return (_bmin(root->right));
+    if (cur->right)
+        return (_bmin(cur->right));
     else
     {
         bnode *anctr = root, *sucr = NULL;

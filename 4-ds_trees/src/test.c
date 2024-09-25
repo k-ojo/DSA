@@ -42,9 +42,9 @@ int  main(void)
 
     root = deleten(root, 80);
     printf("Is it binary? %i\n", altisBST(root));
-    //printf("Succer: %i\n", *(int *)getSuccessor(root, 90)->data);
+    printf("Succer: %i\n", *(int *)getSuccessor(root, 67)->data);
 
-    binotr(root);
+    //binotr(root);
 
     return (0);
 }
