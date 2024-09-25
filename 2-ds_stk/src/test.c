@@ -2,6 +2,7 @@
 
 int c1 = 0;  //used in debugging
 int c2 = 0; //used in debugging
+
 int main(void)
 {
     msnode *top = NULL;

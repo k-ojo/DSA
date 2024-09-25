@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../0-ds_lnklst/lnklst.h"
+#include "../../0-ds_lnklst/lnklst.h"
 
 extern int c1, c2;
 /*
