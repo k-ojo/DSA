@@ -39,7 +39,7 @@ int  main(void)
     //bposrtr(root);
     //binotr(root);
 
-    *(int *)(root->data) = 80;
+    *(int *)(root->data) = 900;
     printf("Is it binary? %i\n", isBst(root));
     //binotr(root);
 

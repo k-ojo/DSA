@@ -1,10 +1,13 @@
+#ifndef _TREE_
+#define _TREE_
 #include <stdio.h>
 #include <stdlib.h>
 #include "../3-ds_queue/queue.h"
 
+
 #define errno 99
-#define MAXINT 10000;
-#define MININT -10000;
+#define MAX_INT (-(1 << (sizeof(int) * 8 - 1)))
+#define MIN_INT (1 << (sizeof(int) * 8 - 1))
 /**
 * BSTNode- Binary Search Tree Node
 * @data: node data
@@ -57,3 +60,4 @@ int _max(int a, int b);
 int _min(int a, int b);
 int _isGtr(char *s1, char *s2);
 
+#endif

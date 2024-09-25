@@ -52,16 +52,14 @@ int _isBst(bnode *root, void *data)
 {
     if (!root)
         return (1);
-    if (!root->left && !root->right)
-    {
-        return (1);
-    }
-    *(int *)data = *(int *)root->data;
-    _isBst(root->left, root->data);
+
+    if (!_isBst(root->left, data))
+        return (0);
     if (*(int *)root->data < *(int *)data)
         return (0);
-    _isBst(root->right, data);
-    return (1);
+    //printf("%i  %i\n",*(int *)root->data, *(int *)data);
+    data = root->data;
+    return (_isBst(root->right, data));
 }
 
 /**
@@ -71,8 +69,7 @@ int _isBst(bnode *root, void *data)
 */
 int isBst(bnode *root)
 {
-    int a = 0, *c = (int *)malloc(sizeof(int));
-    a = _isBst(root, c);
-    free(c);
-    return (a);
+    int c = MIN_INT;
+    
+    return(_isBst(root, &c));
 }
