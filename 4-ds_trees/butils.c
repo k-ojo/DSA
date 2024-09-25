@@ -61,14 +61,3 @@ int _isBst(bnode *root, void *data)
     data = root->data;
     return (_isBst(root->right, data));
 }
-
-/**
-* isBst- checks if binary tree is binary search tree
-* @root: root of tree
-* Return: 1 if true, 0 if false. -1 on failure
-*/
-int isBst(bnode *root)
-{
-    int c = MIN_INT;
-    return(_isBst(root, &c));
-}

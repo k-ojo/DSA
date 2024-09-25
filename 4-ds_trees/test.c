@@ -2,6 +2,7 @@
 
 int  main(void)
 {
+    printf ("%i\n", MAX_INT);
     int d2 = 78, d4 = 190, d1 = 17, d3 = 540;
     int d5 = 90, d6 = 3;
     bnode *root = NULL;
@@ -9,7 +10,7 @@ int  main(void)
     //populate tree
     root = _binsertInt(root, 80);
     root = _binsertInt(root, d6);
-    root = _binsertInt(root, 920);
+    root = _binsertInt(root, 780);
     root = _binsertInt(root, 6);
     root = _binsertInt(root, d5);
     root = _binsertInt(root, 67);
@@ -39,8 +40,8 @@ int  main(void)
     //bposrtr(root);
     //binotr(root);
 
-    *(int *)(root->data) = 900;
-    printf("Is it binary? %i\n", isBst(root));
+    *(int *)(root->data) = 800;
+    printf("Is it binary? %i\n", altisBST(root));
     //binotr(root);
 
     return (0);
