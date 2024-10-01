@@ -22,6 +22,8 @@ typedef struct BSTNode
 
 }bnode;
 
+typedef struct _Heap heap;
+
 /*
 * _bool- Bolean type
 * @False: Boolean False = 0
@@ -66,5 +68,10 @@ void bposrtr(bnode *root);
 int _max(int a, int b);
 int _min(int a, int b);
 int _isGtr(char *s1, char *s2);
+
+//arrtree.c
+heap *hinit(int n);
+void hprint(heap *h);
+int addint(heap *h, int data);
 
 #endif

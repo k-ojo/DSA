@@ -114,7 +114,6 @@ bnode *deleten(bnode *root, int data)
             root->right = deleten(root->right, *(int *) tmp->data);
         }
     }
-
     return (root);
 }
 

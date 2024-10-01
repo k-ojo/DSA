@@ -44,6 +44,21 @@ int  main(void)
     printf("Is it binary? %i\n", altisBST(root));
     printf("Succer: %i\n", *(int *)getSuccessor(root, 67)->data);
 
+    //heap tests
+    heap *t = hinit(3);
+    addint(t, 80);
+    addint(t, 7);
+    addint(t, 0);
+
+    addint(t, 9);
+    printf("Error\n");
+
+    hprint(t);
+
+    //t->arr[100] = 100;
+
+    //printf("arr: %i\n", t->arr[100]);
+
     //binotr(root);
 
     return (0);
