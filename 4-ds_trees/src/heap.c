@@ -3,8 +3,8 @@
 
 typedef struct _Heap
 {
+    int size;
     int len;
-    int index;
     int *arr;
 }heap;
 
@@ -18,8 +18,8 @@ heap *hinit(int n)
 {
     heap *_newh = (heap *)malloc(sizeof(heap));
     _newh->arr = (int *)malloc(n * sizeof(int));
-    _newh->len = n;
-    _newh->index = 0;
+    _newh->size = n;
+    _newh->len = 0;
     return (_newh);
 }
 
@@ -32,17 +32,17 @@ heap *hinit(int n)
 */
 int addint(heap *h, int data)
 {
-    int tmp, c = h->index;
+    int tmp, c = h->len;
     //logic
-    if (h->index >= h->len)
+    if (h->len >= h->size)
         return (0);
-    h->arr[h->index] = data;
+    h->arr[h->len] = data;
 
     while (c >= 0)
     {
         if (c == 0)
         {
-            h->index += 1;
+            h->len += 1;
             return (1);
         }
         else if (c % 2 == 0 && h->arr[c] < h->arr[(c - 2) / 2])   // if child index is even
@@ -61,7 +61,7 @@ int addint(heap *h, int data)
         }
         else
         {
-            h->index += 1;
+            h->len += 1;
             return (1);
         }
     }
@@ -75,8 +75,18 @@ int addint(heap *h, int data)
 */
 void hprint(heap *h)
 {
-    int i, n = h->index;
+    int i, n = h->len;
 
     for (i = 0; i < n; i++)
         printf("%i--> %i\n", i, h->arr[i]);
+}
+
+/**
+* poll- removes root node
+* @h: heap
+*/
+int poll(heap *h)
+{
+    return (0);
+
 }
