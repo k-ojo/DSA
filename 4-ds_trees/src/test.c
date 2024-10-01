@@ -47,13 +47,17 @@ int  main(void)
 */
 
     //heap tests
-    heap *t = hinit(4);
+    heap *t = hinit(100);
     addint(t, 80);
     addint(t, 7);
+    addint(t, 13);
+    addint(t, 2);
+    addint(t, 19);
     addint(t, 0);
     addint(t, 4);
     hprint(t);
     poll(t);
+    //poll(t);
     hprint(t);
 
     //t->arr[100] = 100;
