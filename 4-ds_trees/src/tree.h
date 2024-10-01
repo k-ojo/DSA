@@ -69,9 +69,10 @@ int _max(int a, int b);
 int _min(int a, int b);
 int _isGtr(char *s1, char *s2);
 
-//arrtree.c
+//heap.c
 heap *hinit(int n);
 void hprint(heap *h);
 int addint(heap *h, int data);
+int poll(heap *h);
 
 #endif

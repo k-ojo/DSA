@@ -2,6 +2,7 @@
 
 int  main(void)
 {
+    /*
     printf ("%i\n", MAX_INT);
     int d2 = 78, d4 = 190, d1 = 17, d3 = 540;
     int d5 = 90, d6 = 3;
@@ -43,16 +44,16 @@ int  main(void)
     root = deleten(root, 80);
     printf("Is it binary? %i\n", altisBST(root));
     printf("Succer: %i\n", *(int *)getSuccessor(root, 67)->data);
+*/
 
     //heap tests
-    heap *t = hinit(3);
+    heap *t = hinit(4);
     addint(t, 80);
     addint(t, 7);
     addint(t, 0);
-
-    addint(t, 9);
-    printf("Error\n");
-
+    addint(t, 4);
+    hprint(t);
+    poll(t);
     hprint(t);
 
     //t->arr[100] = 100;

@@ -9,7 +9,7 @@ typedef struct _Heap
 }heap;
 
 /**
-* hinit- initializes a heap of length n
+* hinit- initializes a heap of size n
 * @n: length of heap
 *
 * Return: pointer to heap
@@ -77,6 +77,7 @@ void hprint(heap *h)
 {
     int i, n = h->len;
 
+    printf("Length of heap is: %i\n", n);
     for (i = 0; i < n; i++)
         printf("%i--> %i\n", i, h->arr[i]);
 }
@@ -87,6 +88,39 @@ void hprint(heap *h)
 */
 int poll(heap *h)
 {
-    return (0);
+    int data, tmp, lc, rc, i = 0;
 
+    if (h->len == 0)
+        return (MIN_INT);
+    data = h->arr[0];
+    h->arr[0] = h->arr[h->len - 1];
+    h->len--;
+
+    while (1)
+    {
+        tmp = h->arr[i];
+
+        lc = 2 * i + 1;
+        rc = 2 * i + 2;
+        if (rc >= h->len)
+            lc = i;
+        if (rc >= h->len)
+            rc = i;
+        
+        if (tmp > h->arr[lc] && h->arr[lc] <= h->arr[rc])
+        {
+            h->arr[i] = h->arr[lc];
+            h->arr[lc] = tmp;
+            i = lc;
+        }
+        else if (tmp > h->arr[rc] && h->arr[rc] < h->arr[lc])
+        {
+            h->arr[i] = h->arr[rc];
+            h->arr[rc] = tmp;
+            i = rc;
+        }
+        else
+            return (data);
+    }
+    return (data);
 }
