@@ -56,7 +56,7 @@ int  main(void)
     addint(t, 0);
     addint(t, 4);
     hprint(t);
-    poll(t);
+    hremove(t, 80);
     //poll(t);
     hprint(t);
 

@@ -8,7 +8,7 @@ This project walks through the implementation of all the basic concepts in DSA f
 | --------------------- | -------------- |
 | 1. Linked list        | 0-ds_lnklst    |
 | 2. Doubly linked list | 1-ds_dblnklst  |
-| 3. Stack              | 2-ds_stk     |
+| 3. Stack              | 2-ds_stk       |
 
 
 ## Installation 

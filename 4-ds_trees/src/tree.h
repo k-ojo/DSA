@@ -74,5 +74,8 @@ heap *hinit(int n);
 void hprint(heap *h);
 int addint(heap *h, int data);
 int poll(heap *h);
+int findData(heap *h, int);
+int hremove(heap *h, int _data);
+int bubbleup(heap *h, int c);
 
 #endif
