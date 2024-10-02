@@ -23,9 +23,11 @@ height of leaf = 0.
 
 Height of tree = height of root node.
 
-Balanced binary tree is a binary tree for which the difference in height of both left and right trees of every node is less than a constant usually 1.
+Balanced binary tree is a binary tree for which the difference in height of both left and right trees of every node is less than a constant, usually 1.
 
-A perfect BT is the one whose height is the same regardless of the path taken. Every node has 0 or 2 children.
+### Binary Tree (BT)
+Eeach node has at most 2 children.
+A perfect BT: Every node has 0 or 2 children.
 
 #### Binary Search Tree
 A BT in which for each node, all the values at left are lower or equall and the values at right are greater.
@@ -43,9 +45,10 @@ Pushes new node to top of tree
 3. delete()
 checks if tree is empty
 
-4. travers()
+4. traverse()
 
 ## APPLICATION
 
-1. Processes
-2. Printer 
+1. Network
+2. File system
+2. Priority Queues 
