@@ -76,6 +76,7 @@ int addint(heap *h, int data);
 int poll(heap *h);
 int findData(heap *h, int);
 int hremove(heap *h, int _data);
-int bubbleup(heap *h, int c);
+void bubbleup(heap *h, int c);
+void bubbledwn(heap *h, int i);
 
 #endif

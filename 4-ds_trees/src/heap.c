@@ -38,21 +38,9 @@ int addint(heap *h, int data)
         return (0);
     h->arr[h->len] = data;
 
-    return (bubbleup(h, c));
-}
-
-
-/**
-* hprint- print heap
-* @h: input heap
-*/
-void hprint(heap *h)
-{
-    int i, n = h->len;
-
-    printf("Length of heap is: %i\n", n);
-    for (i = 0; i < n; i++)
-        printf("%i--> %i\n", i, h->arr[i]);
+    bubbleup(h, c);
+    h->len += 1;
+    return (1);
 }
 
 /**
@@ -63,41 +51,15 @@ void hprint(heap *h)
 */
 int poll(heap *h)
 {
-    int data, tmp, lc, rc, i = 0;
+    int data, i = 0;
 
     if (h->len == 0)
         return (MIN_INT);
     data = h->arr[0];
     h->arr[0] = h->arr[h->len - 1];
     h->len--;
-
-    while (1)
-    {
-        tmp = h->arr[i];
-
-        lc = 2 * i + 1;
-        rc = 2 * i + 2;
-
-        if (rc >= h->len)
-            lc = i;
-        if (rc >= h->len)
-            rc = i;
-        
-        if (tmp > h->arr[lc] && h->arr[lc] <= h->arr[rc])
-        {
-            h->arr[i] = h->arr[lc];
-            h->arr[lc] = tmp;
-            i = lc;
-        }
-        else if (tmp > h->arr[rc] && h->arr[rc] < h->arr[lc])
-        {
-            h->arr[i] = h->arr[rc];
-            h->arr[rc] = tmp;
-            i = rc;
-        }
-        else
-            return (data);
-    }
+    bubbledwn(h, i);
+    return (data);
 }
 
 /**
@@ -109,42 +71,29 @@ int poll(heap *h)
 */
 int hremove(heap *h, int _data)
 {
-    int tmp, lc, rc, i = findData(h, _data);
+    int p, i = findData(h, _data);
 
     if (h->len == 0 || i == -1)
         return (0);
+    
+    if (i % 2 == 0)
+        p = (i - 2) / 2;
+    else
+        p = (i - 1) / 2;
 
     h->arr[i] = h->arr[h->len - 1];
     h->len--;
+    
+    if (p >= 0 && h->arr[p] > h->arr[i])
+        bubbleup(h, i);
+    else
+        bubbledwn(h, i);
 
-    while (1)
-    {
-        tmp = h->arr[i];
-
-        lc = 2 * i + 1;
-        rc = 2 * i + 2;
-
-        if (rc >= h->len)
-            lc = i;
-        if (rc >= h->len)
-            rc = i;
-        
-        if (tmp > h->arr[lc] && h->arr[lc] <= h->arr[rc])
-        {
-            h->arr[i] = h->arr[lc];
-            h->arr[lc] = tmp;
-            i = lc;
-        }
-        else if (tmp > h->arr[rc] && h->arr[rc] < h->arr[lc])
-        {
-            h->arr[i] = h->arr[rc];
-            h->arr[rc] = tmp;
-            i = rc;
-        }
-        else
-            return (1);
-    }
+    return (1);
 }
+
+
+// UTILITIES
 
 /**
 * findData- finds the index input data
@@ -162,17 +111,21 @@ int findData(heap *h, int d)
     return (-1);
 }
 
-int bubbleup(heap *h, int c)
+/**
+* bubbledup- bubbles up
+* @h: heap
+* @c: index of node
+*
+* Return: nothing
+*/
+void bubbleup(heap *h, int c)
 {
     int tmp;
 
     while (1)
     {
         if (c <= 0)
-        {
-            h->len += 1;
-            return (1);
-        }
+            return;
         else if (c % 2 == 0 && h->arr[c] < h->arr[(c - 2) / 2])   // if child index is even
         {
             tmp = h->arr[c];
@@ -188,10 +141,61 @@ int bubbleup(heap *h, int c)
             c = (c - 1) / 2;
         }
         else
-        {
-            h->len += 1;
-            return (1);
-        }
+            return;
     }
     
+}
+
+/**
+* bubbledwn- bubbles down
+* @h: heap
+* @i: index of node
+*
+* Return: nothing
+*/
+void bubbledwn(heap *h, int i)
+{
+    int tmp, lc, rc;
+
+    while (1)
+    {
+        tmp = h->arr[i];
+
+        lc = 2 * i + 1;
+        rc = 2 * i + 2;
+
+        if (rc >= h->len)
+            lc = i;
+        if (rc >= h->len)
+            rc = i;
+        
+        if (tmp > h->arr[lc] && h->arr[lc] <= h->arr[rc])
+        {
+            h->arr[i] = h->arr[lc];
+            h->arr[lc] = tmp;
+            i = lc;
+        }
+        else if (tmp > h->arr[rc] && h->arr[rc] < h->arr[lc])
+        {
+            h->arr[i] = h->arr[rc];
+            h->arr[rc] = tmp;
+            i = rc;
+        }
+        else
+            return;
+    }
+}
+
+/**
+* hprint- print heap
+* @h: input heap
+*
+*/
+void hprint(heap *h)
+{
+    int i, n = h->len;
+
+    printf("Length of heap is: %i\n", n);
+    for (i = 0; i < n; i++)
+        printf("%i--> %i\n", i, h->arr[i]);
 }
