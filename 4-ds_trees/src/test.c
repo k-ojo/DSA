@@ -47,7 +47,7 @@ int  main(void)
 */
 
     //heap tests
-    heap *t = hinit(100);
+    heap *t = hinit(4);
     addint(t, 80);
     addint(t, 7);
     addint(t, 13);

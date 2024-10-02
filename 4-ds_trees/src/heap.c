@@ -35,9 +35,18 @@ int addint(heap *h, int data)
     int c = h->len;
     //logic
     if (h->len >= h->size)
-        return (0);
-    h->arr[h->len] = data;
+    {
+        int *arr = (int *)malloc(sizeof(int) * (h->size) * 2);
 
+        for (int i = 0; i < h->size; i++)
+            arr[i] = h->arr[i];
+
+        free(h->arr);
+        h->size *= 2;
+        h->arr = arr;
+    }
+    
+    h->arr[h->len] = data;
     bubbleup(h, c);
     h->len += 1;
     return (1);
