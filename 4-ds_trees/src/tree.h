@@ -71,12 +71,12 @@ int _isGtr(char *s1, char *s2);
 
 //heap.c
 heap *hinit(int n);
-void hprint(heap *h);
-int addint(heap *h, int data);
+void addint(heap *h, int data);
 int poll(heap *h);
 int findData(heap *h, int);
 int hremove(heap *h, int _data);
 void bubbleup(heap *h, int c);
 void bubbledwn(heap *h, int i);
+void hprint(heap *h);
 
 #endif

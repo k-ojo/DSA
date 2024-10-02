@@ -28,9 +28,9 @@ heap *hinit(int n)
 * @h: heap
 * @data: input data
 *
-* Return: 1 on success 0 on failure
+* Return: nothing
 */
-int addint(heap *h, int data)
+void addint(heap *h, int data)
 {
     int c = h->len;
     //logic
@@ -45,11 +45,10 @@ int addint(heap *h, int data)
         h->size *= 2;
         h->arr = arr;
     }
-    
+
     h->arr[h->len] = data;
     bubbleup(h, c);
     h->len += 1;
-    return (1);
 }
 
 /**
