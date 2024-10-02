@@ -36,14 +36,8 @@ void addint(heap *h, int data)
     //logic
     if (h->len >= h->size)
     {
-        int *arr = (int *)malloc(sizeof(int) * (h->size) * 2);
-
-        for (int i = 0; i < h->size; i++)
-            arr[i] = h->arr[i];
-
-        free(h->arr);
+        h->arr = (int *)realloc(h->arr, sizeof(int) * (h->size) * 2);
         h->size *= 2;
-        h->arr = arr;
     }
 
     h->arr[h->len] = data;
@@ -206,4 +200,14 @@ void hprint(heap *h)
     printf("Length of heap is: %i\n", n);
     for (i = 0; i < n; i++)
         printf("%i--> %i\n", i, h->arr[i]);
+}
+
+/**
+* hdelete- deletes heap and frees allocated memory
+* @h: heap
+*/
+void hdelete(heap *h)
+{
+    free (h->arr);
+    free (h);
 }

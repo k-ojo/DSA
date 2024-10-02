@@ -78,5 +78,6 @@ int hremove(heap *h, int _data);
 void bubbleup(heap *h, int c);
 void bubbledwn(heap *h, int i);
 void hprint(heap *h);
+void hdelete(heap *h);
 
 #endif

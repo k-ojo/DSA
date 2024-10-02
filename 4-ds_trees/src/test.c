@@ -59,6 +59,7 @@ int  main(void)
     hremove(t, 80);
     //poll(t);
     hprint(t);
+    hdelete(t);
 
     //t->arr[100] = 100;
 
