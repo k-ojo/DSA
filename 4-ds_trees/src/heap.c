@@ -1,5 +1,6 @@
 #include "tree.h"
 
+// DJB MURMUR and CRC32 hashes
 
 typedef struct _Heap
 {
@@ -93,6 +94,7 @@ int hremove(heap *h, int _data)
 
     return (1);
 }
+
 
 
 // UTILITIES
@@ -211,3 +213,4 @@ void hdelete(heap *h)
     free (h->arr);
     free (h);
 }
+
