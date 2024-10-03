@@ -213,4 +213,3 @@ void hdelete(heap *h)
     free (h->arr);
     free (h);
 }
-
