@@ -23,6 +23,7 @@ typedef struct BSTNode
 }bnode;
 
 typedef struct _Heap heap;
+typedef struct _uFind uFind;
 
 /*
 * _bool- Bolean type
@@ -79,5 +80,9 @@ void bubbleup(heap *h, int c);
 void bubbledwn(heap *h, int i);
 void hprint(heap *h);
 void hdelete(heap *h);
+
+//unionfind.c
+void printuF(uFind *u);
+uFind *ufinit(int size);
 
 #endif

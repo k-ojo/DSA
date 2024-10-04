@@ -44,8 +44,14 @@ int  main(void)
     root = deleten(root, 80);
     printf("Is it binary? %i\n", altisBST(root));
     printf("Succer: %i\n", *(int *)getSuccessor(root, 67)->data);
-*/
+    
+    //t->arr[100] = 100;
 
+    //printf("arr: %i\n", t->arr[100]);
+
+    //binotr(root);
+*/
+    /*
     //heap tests
     heap *t = hinit(4);
     addint(t, 80);
@@ -60,12 +66,9 @@ int  main(void)
     //poll(t);
     hprint(t);
     hdelete(t);
-
-    //t->arr[100] = 100;
-
-    //printf("arr: %i\n", t->arr[100]);
-
-    //binotr(root);
-
+*/
+    //unionfind test
+    uFind *u = ufinit(5);
+    printuF(u);
     return (0);
 }
