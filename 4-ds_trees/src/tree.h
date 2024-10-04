@@ -84,5 +84,7 @@ void hdelete(heap *h);
 //unionfind.c
 void printuF(uFind *u);
 uFind *ufinit(int size);
+int Find(uFind *u, int p);
+int unify(uFind* u, int a, int b);
 
 #endif

@@ -69,6 +69,14 @@ int  main(void)
 */
     //unionfind test
     uFind *u = ufinit(5);
+    unify(u, 1, 4);
+    unify(u, 1, 3);
+    unify(u, 0, 2);
+    printf("%i\n", unify(u, 0, 8));
+
+
     printuF(u);
+    printf("%i\n", Find(u, 0));
+    printf("%i\n", Find(u, 4));
     return (0);
 }
