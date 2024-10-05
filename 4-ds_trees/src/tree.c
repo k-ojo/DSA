@@ -116,4 +116,3 @@ bnode *deleten(bnode *root, int data)
     }
     return (root);
 }
-

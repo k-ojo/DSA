@@ -79,7 +79,5 @@ int  main(void)
 
     printuF(u);
 
-
-    
     return (0);
 }
