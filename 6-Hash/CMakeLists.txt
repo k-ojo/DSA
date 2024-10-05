@@ -7,6 +7,6 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall")
 
-file(GLOB SOURCES "src/*.c")
+file(GLOB SOURCES "src/*.c" "*.c")
 
 add_executable(app ${SOURCES})
