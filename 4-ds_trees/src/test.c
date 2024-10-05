@@ -72,11 +72,14 @@ int  main(void)
     unify(u, 1, 4);
     unify(u, 1, 3);
     unify(u, 0, 2);
-    printf("%i\n", unify(u, 0, 8));
 
+    printf("%i\n", Find(u, 0));
+    printf("%i\n", unify(u, 0, 1));
+    printf("%i\n", Find(u, 4));
 
     printuF(u);
-    printf("%i\n", Find(u, 0));
-    printf("%i\n", Find(u, 4));
+
+
+    
     return (0);
 }

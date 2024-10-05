@@ -40,6 +40,7 @@ void printuF(uFind *u)
         return;
     }
 
+    printf("\tSize\tPopulation\n\t%i\t%i\n", u->size, u->population);
     printf("\tID\tCount\n");
     for (int i = 0; i < u->size; i++)
     {
