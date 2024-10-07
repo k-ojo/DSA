@@ -7,6 +7,6 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall")
 
-file(GLOB SOURCES "src/*.c" "../3-ds_queue/queue.c")
+file(GLOB SOURCES "test.c" "src/*.c" "../3-ds_queue/queue.c")
 
 add_executable(app ${SOURCES})
