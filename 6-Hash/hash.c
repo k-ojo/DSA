@@ -84,14 +84,14 @@ int _mapit(map *m, void *data, void *id)
     if (index == -1)
         return (index);
 
-    m->arr[index] = _binsertInt(m->arr[index], *(int *)data); //this is only limited to int for learning purposes
+    //this is only limited to int for learning purposes
+    m->arr[index] = _binsertInt(m->arr[index], *(int *)data);
 
     return (index);
 }
 
 int mapit(map *m, int data, int key)
 {
-
     return(_mapit(m, &data, &key));
 }
 

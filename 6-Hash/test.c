@@ -19,8 +19,5 @@ int main (void)
     //printf("\t%\n",  *(int *)m->arr[0]->data);
     prdata(m, 1);
 
-
-
-
     return (1);
 }
