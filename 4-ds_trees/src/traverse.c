@@ -1,5 +1,5 @@
 
-/*
+/***********************************************************************************
 * Binary Tree Traversal
 *   |
 *   |-->Breadth-first
@@ -12,7 +12,7 @@
 *
 * NB: Conventionally, left child is visited before right child
 * time cmplexity of all functions is O(n). 
-*/
+************************************************************************************/
 
 
 #include "tree.h"
