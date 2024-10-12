@@ -6,13 +6,8 @@
 
 
 #define errno 99
-<<<<<<< HEAD:4-ds_trees/tree.h
-#define MAXINT 10000;
-#define MININT -10000;
-=======
 #define MAX_INT -((1 << ((sizeof(int) * 8) - 1)) + 1)
 #define MIN_INT ((1 << ((sizeof(int) * 8) - 1)))
->>>>>>> d050c4b35d951864ad7b24ae0b8578cf915a9fad:4-ds_trees/src/tree.h
 /**
 * BSTNode- Binary Search Tree Node
 * @data: node data

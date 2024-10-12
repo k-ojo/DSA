@@ -52,31 +52,6 @@ int _isBst(bnode *root, void *data)
 {
     if (!root)
         return (1);
-<<<<<<< HEAD:4-ds_trees/butils.c
-    if (!root->left && !root->right)
-    {
-        return (1);
-    }
-    *(int *)data = *(int *)root->data;
-    _isBst(root->left, root->data);
-    if (*(int *)root->data < *(int *)data)
-        return (0);
-    _isBst(root->right, data);
-    return (1);
-}
-
-/**
-* isBst- checks if binary tree is binary search tree
-* @root: root of tree
-* Return: 1 if true, 0 if false. -1 on failure
-*/
-int isBst(bnode *root)
-{
-    int a = 0, *c = (int *)malloc(sizeof(int));
-    a = _isBst(root, c);
-    free(c);
-    return (a);
-=======
 
     if (!_isBst(root->left, data))
         return (0);
@@ -85,5 +60,4 @@ int isBst(bnode *root)
     //printf("%i  %i\n",*(int *)root->data, *(int *)data);
     data = root->data;
     return (_isBst(root->right, data));
->>>>>>> d050c4b35d951864ad7b24ae0b8578cf915a9fad:4-ds_trees/src/butils.c
 }
