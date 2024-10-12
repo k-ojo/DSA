@@ -1,5 +1,11 @@
 #include "hash.h"
-
+/**
+* _data: data
+* @name: name
+* @age: age
+* @id: id
+* 
+*/
 typedef struct _data
 {
     char *name;

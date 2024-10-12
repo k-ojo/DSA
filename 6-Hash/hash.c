@@ -60,7 +60,7 @@ ksize Hint(void *id, tsize s)
 }
 
 /**
-* mapit- maps data to an index
+* _mapit- maps data to an index
 * @m: the map
 * @data: data input
 * @id: id of data
@@ -90,12 +90,23 @@ int _mapit(map *m, void *data, void *id)
     return (index);
 }
 
+/**
+* mapit- maps data to an index
+* @m: the map
+* @data: data input
+* Return: Index of data 
+*/
 int mapit(map *m, int data, int key)
 {
     return(_mapit(m, &data, &key));
 }
 
-
+/**
+* prdata- prints data
+* @m: the map
+* @key: data input
+* Return: Index of data 
+*/
 int prdata(map *m, int key)
 {
     int index = m->H(&key, m->size);
