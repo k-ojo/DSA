@@ -13,6 +13,7 @@
 * time cmplexity of all functions is O(n). 
 */
 
+
 #include "tree.h"
 
 /**
@@ -84,5 +85,4 @@ void bposrtr(bnode *root)
     bposrtr(root->left);
     bposrtr(root->right);
     printf("Data at node: %i\n", *(int *)root->data);
-
 }

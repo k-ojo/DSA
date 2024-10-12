@@ -52,6 +52,7 @@ int _isBst(bnode *root, void *data)
 {
     if (!root)
         return (1);
+<<<<<<< HEAD:4-ds_trees/butils.c
     if (!root->left && !root->right)
     {
         return (1);
@@ -75,4 +76,14 @@ int isBst(bnode *root)
     a = _isBst(root, c);
     free(c);
     return (a);
+=======
+
+    if (!_isBst(root->left, data))
+        return (0);
+    if (*(int *)root->data < *(int *)data)
+        return (0);
+    //printf("%i  %i\n",*(int *)root->data, *(int *)data);
+    data = root->data;
+    return (_isBst(root->right, data));
+>>>>>>> d050c4b35d951864ad7b24ae0b8578cf915a9fad:4-ds_trees/src/butils.c
 }
