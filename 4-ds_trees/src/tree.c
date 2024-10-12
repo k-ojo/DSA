@@ -26,6 +26,7 @@ bnode *binit(void *data)
 * binsert- inserts new node
 * @root: root node
 * @data: data to be inserted
+* Return: The root 
 */
 bnode *_binsertInt(bnode *root, int d)
 {

@@ -36,7 +36,7 @@ void bltraverse(bnode *root)
         root = (bnode *)peek(q);
         deque(q);
 
-        printf("data: %i\n", *(int *)(root->data));
+        printf("\tdata: %i\n", *(int *)(root->data));
         if (root->left)
             enqueue(q, root->left);
         if (root->right)
@@ -53,7 +53,7 @@ void bpreotr(bnode *root)
 {
     if (!root)
         return;
-    printf("Data at node: %i\n", *(int *)root->data);
+    printf("\tData at node: %i\n", *(int *)root->data);
     bpreotr(root->left);
     bpreotr(root->right);
 }
@@ -68,7 +68,7 @@ void binotr(bnode *root)
     if (!root)
         return;
     binotr(root->left);
-    printf("Data at node: %i\n", *(int *)root->data);
+    printf("\tData at node: %i\n", *(int *)root->data);
     binotr(root->right);
 }
 
@@ -84,5 +84,5 @@ void bposrtr(bnode *root)
         return;
     bposrtr(root->left);
     bposrtr(root->right);
-    printf("Data at node: %i\n", *(int *)root->data);
+    printf("\tData at node: %i\n", *(int *)root->data);
 }
