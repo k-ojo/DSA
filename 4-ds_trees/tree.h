@@ -3,6 +3,8 @@
 #include "../3-ds_queue/queue.h"
 
 #define errno 99
+#define MAXINT 10000;
+#define MININT -10000;
 /**
 * BSTNode- Binary Search Tree Node
 * @data: node data
@@ -41,8 +43,8 @@ void _remove(bnode *root, void *data);
 bnode *_bmax(bnode *root);
 bnode *_bmin(bnode *root);
 int _bheight(bnode *);
-int isBst(bnode *root);
 int _isBst(bnode *root, void *data);
+int isBst(bnode *root);
 
 //traverse.c  
 void bltraverse(bnode *root);

@@ -46,16 +46,22 @@ int _bheight(bnode *r)
 /**
 * _isBst- checks if binary tree is binary search tree
 * @root: root of tree
-* Return: 1 if true, 0 if false
+* Return: 1 if true, 0 if false,  -1 on failure
 */
 int _isBst(bnode *root, void *data)
 {
     if (!root)
         return (1);
+    if (!root->left && !root->right)
+    {
+        return (1);
+    }
+    *(int *)data = *(int *)root->data;
     _isBst(root->left, root->data);
     if (*(int *)root->data < *(int *)data)
         return (0);
-    return (_isBst(root->right, root->data));
+    _isBst(root->right, data);
+    return (1);
 }
 
 /**
@@ -65,7 +71,8 @@ int _isBst(bnode *root, void *data)
 */
 int isBst(bnode *root)
 {
-    if (!root)
-        return (-1);
-    return(_isBst(root, root->data));
+    int a = 0, *c = (int *)malloc(sizeof(int));
+    a = _isBst(root, c);
+    free(c);
+    return (a);
 }
