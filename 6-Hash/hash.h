@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../4-ds_trees/src/tree.h"
-#include <string.h>
 
 typedef int tsize;
 typedef int ksize;

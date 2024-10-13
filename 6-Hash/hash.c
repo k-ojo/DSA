@@ -3,8 +3,8 @@
 
 /**
 *Hinit- initialize hash map
-* @size: size of arr
-*
+* @s: size of arr
+* @T: Type of map id
 * Return: Pointer to map
 */
 map *Hinit(tsize s, type T)
@@ -49,7 +49,10 @@ ksize Hstr(void *id, tsize s)
 }
 
 /**
- Hint- hashes int values
+* Hint- hashes int values
+* @id: id to be hashed
+* @s: size of map
+* Return: Index related to id
 */
 ksize Hint(void *id, tsize s)
 {
@@ -94,9 +97,9 @@ int _mapit(map *m, void *data, void *id)
 * mapit- maps data to an index
 * @m: the map
 * @data: data input
-* Return: Index of data 
-*/
-int mapit(map *m, int data, int key)
+* Return: Index of data
+*/ 
+ int mapit(map *m, int data, int key)
 {
     return(_mapit(m, &data, &key));
 }
