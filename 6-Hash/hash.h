@@ -31,6 +31,7 @@ map *Hinit(tsize s, type);
 int _mapit(map *m, void *data, void *id);
 int mapit(map *m, int, int id);
 int prdata(map *m, int);
+void *lookup(map *m, int key, int data);
 
 
 #endif

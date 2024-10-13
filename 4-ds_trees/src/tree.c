@@ -50,6 +50,7 @@ bnode *_binsertInt(bnode *root, int d)
 * _searchInt- searches of integer is in the tree
 * @root: the root of the tree to be searched
 * @data: data to be searched
+* Return: The address of the node
 */
 bnode *_searchInt(bnode *root, int data)
 {

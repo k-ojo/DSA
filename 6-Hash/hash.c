@@ -119,3 +119,11 @@ int prdata(map *m, int key)
     return (index);
 }
 
+void *lookup(map *m, int key, int data)
+{
+    int i = m->H(&key, m->size);
+    bnode *d = _searchInt(m->arr[i], data);
+    if (d)
+        return (d->data);
+    return (NULL);
+}
